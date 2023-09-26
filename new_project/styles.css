@@ -1,0 +1,76 @@
+/* Спочатку задаємо стилі для контейнера, який буде фіксованою шириною */
+.container {
+    width: 980px;
+    margin: 0 auto; /* Вирівнюємо по центру */
+    padding: 0 10px; /* Відступи по 10px з обох сторін */
+  
+}
+
+/* Розтягуємо шапку, меню і підвал на всю ширину екрану */
+header, nav, footer {
+    width: 100%;
+    color: #fff; /* Приклад кольору тексту */
+    /* Додайте інші стилі за вашими потребами */
+}
+
+/* Збільште шрифт тексту в шапці, меню і підвалу */
+header, nav, footer {
+    font-size: 20px;   /* Приклад розміру шрифту */
+    line-height: 22px; 
+}
+
+/* Додайте інші стилі для контенту в шапці, меню і підвалу */
+/* Наприклад: */
+header .content {
+    padding: 20px; /* Приклад внутрішнього відступу */
+}
+
+
+
+.retreat{
+    padding-left: 60px;
+    position: relative;
+}
+
+.img1{
+  height: 85px;
+  overflow: auto;
+  float: left; 
+  margin-right: 10px;
+}
+
+
+
+.abc{
+    color:grey;
+    font-family: 'PT Sans', sans-serif;
+    font-size: 24px;
+    line-height: 22px;
+
+}
+.slogan{
+    color:grey;
+    font-family: 'PT Sans', sans-serif;
+    font-size: 14px;
+}
+
+.phone {
+    position: absolute;
+    top: -16px;
+    right: 10px; /* Відстань від правого краю контейнера */
+    font-size: 30px; /* Розмір тексту */
+    color:grey; /* Колір тексту */
+    line-height: 36px;
+    font-family: 'PT Sans', sans-serif;
+
+}
+
+.feedback-link{
+    position: absolute;
+    right: 10px; /* Відстань від правого краю контейнера */
+    font-size: 14px; /* Розмір тексту */
+    font-family: 'PT Sans', sans-serif;
+    color:grey;
+    text-decoration: underline dotted;
+    top: 70px;
+}
