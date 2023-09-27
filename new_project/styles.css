@@ -1,76 +1,148 @@
-/* Спочатку задаємо стилі для контейнера, який буде фіксованою шириною */
-.container {
-    width: 980px;
-    margin: 0 auto; /* Вирівнюємо по центру */
-    padding: 0 10px; /* Відступи по 10px з обох сторін */
-  
-}
+
 
 /* Розтягуємо шапку, меню і підвал на всю ширину екрану */
 header, nav, footer {
     width: 100%;
-    color: #fff; /* Приклад кольору тексту */
-    /* Додайте інші стилі за вашими потребами */
-}
-
-/* Збільште шрифт тексту в шапці, меню і підвалу */
-header, nav, footer {
-    font-size: 20px;   /* Приклад розміру шрифту */
-    line-height: 22px; 
-}
-
-/* Додайте інші стилі для контенту в шапці, меню і підвалу */
-/* Наприклад: */
-header .content {
-    padding: 20px; /* Приклад внутрішнього відступу */
+    color: #fff;
+    
 }
 
 
 
-.retreat{
-    padding-left: 60px;
-    position: relative;
-}
+@media (min-width: 768px) {
+    .container {
+        max-width: 980px;
+        margin: 0 auto; /* Вирівнюємо по центру */
+        padding: 0 10px; /* Відступи по 10px з обох сторін */
+          
+    }
+   
+    header, nav, footer {
+        font-size: 20px;   
+        line-height: 22px; 
+    }
+    
+    /* Додайте інші стилі для контенту в шапці, меню і підвалу */
+    /* Наприклад: */
+    header .content {
+        padding: 20px; 
+    }
+    
+    .retreat{
+        padding-left: 60px;
+        position: relative;
+    }
+    
+    .img1{
+        height: 85px;
+        overflow: auto;
+        float: left; 
+        margin-right: 10px;
+    }
+    
+    .abc{
+        color:grey;
+        font-family: 'PT Sans', sans-serif;
+        font-size: 36px;
+        line-height: 26px;
+        
+    
+    }
+    .slogan{
+        color:grey;
+        font-family: 'PT Sans', sans-serif;
+        font-size: 22px;
+    }
+    
+    .phone {
+        position: absolute;
+        top: -16px;
+        right: 10px; /* Відстань від правого краю контейнера */
+        font-size: 30px; /* Розмір тексту */
+        color:grey; /* Колір тексту */
+        line-height: 36px;
+        font-family: 'PT Sans', sans-serif;
+    }
+    
+    .feedback-link{
+        position: absolute;
+        right: 10px; /* Відстань від правого краю контейнера */
+        font-size: 22px; /* Розмір тексту */
+        font-family: 'PT Sans', sans-serif;
+        color:grey;
+        text-decoration: underline dotted;
+        top: 70px;
+    }
+    }
 
-.img1{
-  height: 85px;
-  overflow: auto;
-  float: left; 
-  margin-right: 10px;
-}
 
 
 
-.abc{
-    color:grey;
-    font-family: 'PT Sans', sans-serif;
-    font-size: 24px;
-    line-height: 22px;
+    /*adaptive*/
+    @media (max-width: 767px) {
+        .container {
+            margin: 0 auto; /* align in the center */
+            padding: 0 3px; /* Indent 10px on both sides */
+              
+        }
 
-}
-.slogan{
-    color:grey;
-    font-family: 'PT Sans', sans-serif;
-    font-size: 14px;
-}
-
-.phone {
-    position: absolute;
-    top: -16px;
-    right: 10px; /* Відстань від правого краю контейнера */
-    font-size: 30px; /* Розмір тексту */
-    color:grey; /* Колір тексту */
-    line-height: 36px;
-    font-family: 'PT Sans', sans-serif;
-
-}
-
-.feedback-link{
-    position: absolute;
-    right: 10px; /* Відстань від правого краю контейнера */
-    font-size: 14px; /* Розмір тексту */
-    font-family: 'PT Sans', sans-serif;
-    color:grey;
-    text-decoration: underline dotted;
-    top: 70px;
-}
+        header, nav, footer {
+            font-size: 20px;   
+            line-height: 22px; 
+        }
+        
+        
+        header .content {
+            padding: 20px; 
+        }
+        
+        .retreat{
+            padding-left: 60px;
+            position: relative;
+        }
+        
+        .img1{
+            height: 50px;
+            overflow: auto;
+            float: left; 
+            margin-right: 5px;
+            margin-left: -50px;
+        }
+        
+        .abc{
+            color:grey;
+            font-family: 'PT Sans', sans-serif;
+            font-size: 17px;
+            line-height: 15px;
+            padding-top: 3px;
+        }
+            
+        .slogan{
+            color:grey;
+            font-family: 'PT Sans', sans-serif;
+            font-size: 11px;
+            margin-top: -14px;
+        }
+        
+        .phone {
+            position: absolute;
+            top: -12px;
+            right: 10px; /* Відстань від правого краю контейнера */
+            font-size: 13px; /* Розмір тексту */
+            color:grey; /* Колір тексту */
+            line-height: 16px;
+            font-family: 'PT Sans', sans-serif;
+        
+        }
+        
+        .feedback-link{
+            position: absolute;
+            right: 10px; /* Відстань від правого краю контейнера */
+            font-size: 10px; /* Розмір тексту */
+            font-family: 'PT Sans', sans-serif;
+            color:grey;
+            text-decoration: underline dotted;
+            top: 23px;
+        }
+        }
+        
