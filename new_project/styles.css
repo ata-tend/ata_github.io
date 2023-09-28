@@ -54,7 +54,7 @@ header, nav, footer {
     .slogan{
         color:grey;
         font-family: 'PT Sans', sans-serif;
-        font-size: 22px;
+        font-size: 19px;
         margin-top: -10px;
     }
     
@@ -71,7 +71,7 @@ header, nav, footer {
     .feedback-link{
         position: absolute;
         right: 10px; /* Відстань від правого краю контейнера */
-        font-size: 22px; /* Розмір тексту */
+        font-size: 19px; /* Розмір тексту */
         font-family: 'PT Sans', sans-serif;
         color:grey;
         text-decoration: underline dotted;
