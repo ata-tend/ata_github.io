@@ -165,12 +165,14 @@ header, nav, footer {
       }
 
 
-    .main-menu > ul > li {
-        display: inline-block;
+    .burger{
         width: 100%;
-        
     }
-          
+
+    .burger-btn{
+        display: none;
+    }
+
 
     }
 
@@ -197,13 +199,17 @@ header, nav, footer {
               
         }
 
-        header, nav, footer {
+        header{
+            position: relative;
+        }
+
+        header,  footer {
             font-size: 20px;   
             line-height: 22px; 
         }
         
         
-        header .content {
+        header.content {
             padding: 20px; 
         }
         
@@ -261,20 +267,61 @@ header, nav, footer {
 
 
 
+        nav{
+            display: none;
+	        justify-content: flex-end;
+        }
+      
+        .burger-btn{
+            display: block;
+            width: 22px;
+            height: 1px;
+            margin-left: auto;
+            margin-bottom: 100px;
+            
+        }
+
+        .burger.open{
+            width: 200px;
+            height: 350px;
+            background: #1b262f;
+            position: absolute;
+            right: 0;
+            top: 0;
+            padding: 10px 10px;
+            margin-top: 90px;
+        }
+
+        .burger.open.fbx{
+            justify-content: flex-start;
+            flex-direction: column;
+        }
 
 
+        .burger.open nav{
+            display: block;
+            border-top: 1px solid rgba(251, 252, 254, 0.15);
+            width: 100%;
+        }
 
+        .burger.open nav ul{
+            flex-direction: column;
+        }
 
+        .menu a{
+            text-decoration: none; /* Приховуємо підкреслення для посилань */
+            display: block;
+            color: #fff;
+            font-family: 'PT Sans', sans-serif;
+            font-size: 17px;
+            padding-left: 5px;
+            line-height: 30px;
+        }
 
-
-
-
-
-
-
-
-
-
+        ul {
+            list-style-type: none; /* Видаляє крапки для ненумерованих списків (ul) */
+        }
+        
 
         }
         
