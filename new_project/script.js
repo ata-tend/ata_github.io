@@ -61,3 +61,18 @@ function showSlides() {
   setTimeout(showSlides, 4000); // Зміна слайдів кожні 4 секунди
 }
 
+
+// script.js
+const header = document.querySelector('header');
+const nav = document.querySelector('nav');
+const footer = document.querySelector('footer');
+
+// Отримуємо висоту блока, який видаляємо (наприклад, header)
+const headerHeight = header.offsetHeight;
+
+// Функція для видалення блока (наприклад, header)
+function removeHeader() {
+    header.style.transform = `translateY(-${headerHeight}px)`;
+}
+
+
