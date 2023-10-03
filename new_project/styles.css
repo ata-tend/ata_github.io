@@ -1,6 +1,6 @@
-
-
-    
+body {
+    overflow-x: hidden;
+  } 
 /* Розтягуємо шапку, меню і підвал на всю ширину екрану */
 header, nav, footer {
     width: 100%;
@@ -10,7 +10,7 @@ header, nav, footer {
 
 
 
-@media (min-width: 768px) {
+
     .container {
         max-width: 980px;
         margin: 0 auto; /* Вирівнюємо по центру */
@@ -97,231 +97,328 @@ header, nav, footer {
         top: 60px;
     }
 
+  
+  
 
 
 
 
 
 
-/*Main navigation menu*/
-    .menu_container{
-        margin: 0; /* Вирівнюємо по центру */
-        padding: 0; /* Відступи по 10px з обох сторін */
-        box-sizing: border-box;
-        display: inline-block;
-        margin-top: 190px;
-        width: 100%;
-        height: 60px;
 
-        background-color: rgb(97, 96, 96); /* Колір фону прямокутника */
-        z-index: -1; /* Розташовуємо фон позаду контейнера */
-        
+  /*Main navigation menu*/
+  .menu_container{
+      margin: 0; /* Вирівнюємо по центру */
+      padding: 0; /* Відступи по 10px з обох сторін */
+      box-sizing: border-box;
+      display: inline-block;
+      margin-top: 180px;
+      width: 100%;
+      height: 60px;
+  
+      background-color: rgb(97, 96, 96); /* Колір фону прямокутника */
+      z-index: -1; /* Розташовуємо фон позаду контейнера */
+      
+  }
+  
+  .menu{
+      font-size: 22px;
+      color:grey;
+      list-style: none;
+      max-width: 980px;
+      text-align: center;
+     
+      margin: auto; /* Автоматично центруємо меню по горизонталі */
+      background-color: transparent; /* Прозорий фон контейнера */
+      position: relative; /* Визначаємо позицію як відносиний */
+      z-index: 1; /* Розташовуємо контент над фоном */
+      
+  }
+  .menu li {
+      margin-top: -10px;
+      display: inline-block;
+      margin-right: 20px;
+      position: relative; /* Додаємо позиціонування, щоб працювати з псевдоелементом */
     }
-
-
-
-    .menu{
-        font-size: 22px;
-        color:grey;
-        list-style: none;
-        max-width: 980px;
-        text-align: center;
-       
-        margin: auto; /* Автоматично центруємо меню по горизонталі */
-        background-color: transparent; /* Прозорий фон контейнера */
-        position: relative; /* Визначаємо позицію як відносиний */
-        z-index: 1; /* Розташовуємо контент над фоном */
-        
-       
+    
+    .menu li::after {
+      content: "";
+      width: 2px; /* Ширина вертикальної риски */
+      height: 20px; /* Висота вертикальної риски (за бажанням) */
+      background-color: #fff; /* Колір вертикальної риски */
+      position: absolute;
+      top: 50%; /* Позиціюємо вертикальну риску посередині тексту */
+      right: -10px; /* Зсув на відстань від тексту */
+      transform: translateY(-50%); /* Це вирівнює вертикальну риску посередині */
     }
-    .menu li {
-        margin-top: 7px;
-        display: inline-block;
-        margin-right: 20px;
-        position: relative; /* Додаємо позиціонування, щоб працювати з псевдоелементом */
+    
+    .menu li:last-child::after {
+      display: none; /* Вимикаємо риску для останнього пункту меню */
+    }
+  .menu a {
+      text-decoration: none; /* Приховуємо підкреслення для посилань */
+      display: block; /* Робимо посилання блочними елементами, щоб займати весь доступний простір */
+      padding: 10px; /* Додаємо відступи між текстом та границею пункту меню */
+      color: #ffffff; /* Колір тексту */
+      font-family: 'PT Sans', sans-serif;
+  }  
+  
+  
+  
+  
+  
+  
+  
+  
+  /*slider*/
+  
+  
+  .slider{
+    position: relative;
+    text-align: center;
+    margin-top: 10px;
+    width: 100%; /* Ширина самого слайдера */
+    height: 350px; /* Висота слайдера */
+  }
+  
+  .slider__block{
+    margin: auto;
+    overflow: hidden;
+    width: 50%; /* Ширина контейнера слайдера */
+    display: grid;
+    grid-template-columns: 1fr auto 1fr; /* Розподіл на 3 колонки з однаковою шириною */
+    align-items: center; /* Вертикально центрувати елементи */
+    text-align: center; /* Центруємо всередині контейнера */
+  }
+  
+  .slider__line{
+    display: flex;
+    position: relative;
+    left: 0;
+    transition: transform else 1s;
+    height: 350px;
+  }
+  
+  .slider__img{
+    height: 50px;
+    max-width: 980px;
+    max-width: 100%; /* Забезпечуємо, щоб картинка була максимальної ширини, не виходячи за межі контейнера */
+    vertical-align: middle; /* Вирівнюємо картинку по вертикалі */
+  }
+  
+  
+  
+  .slider__button{
+    width: 100%;
+    background: none;
+    border: none;
+    
+    font-size: 26px;
+    font-weight: 700;
+    margin: 0 auto;
+    cursor: pointer;
+    display: block;
+    
+  }
+  
+.button-next{
+    grid-column: 3; /* Розміщення правої кнопки в третій колонці */
+    justify-self: start; /* Вирівняти кнопку по лівому краю колонки */
+    text-align: right;
+    right: 0; /* Позиціонуємо другий об'єкт справа від картинки */
+}
+
+.button-prew{
+    grid-column: 1; /* Розміщення лівої кнопки в першій колонці */
+    justify-self: end; /* Вирівняти кнопку по правому краю колонки */
+    text-align: left;
+    left: 0; /* Позиціонуємо перший об'єкт зліва від картинки */
+}
+
+  
+  .button-next,
+  .button-prew {
+    position: absolute;
+    top: 50%; /* Позиціонуємо об'єкти по вертикалі на 50% відносно контейнера */
+    transform: translateY(-50%); /* Вирівнюємо їх назад на 50% їх власної висоти для центрування */
+    padding-top: 30px;
+  }
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+  @media (max-width: 768px){
+  
+      .img1{
+          height: 50px;
+          overflow: auto;
+          float: left; 
+          margin-right: 10px;
+          padding-left:-20px;
+      }
+  
+      .abc{
+          color:grey;
+          font-family: 'PT Sans', sans-serif;
+          font-size: 20px;
+          line-height: 16px;
+          margin-top: 10px;
       }
       
-      .menu li::after {
-        content: "";
-        width: 2px; /* Ширина вертикальної риски */
-        height: 20px; /* Висота вертикальної риски (за бажанням) */
-        background-color: #fff; /* Колір вертикальної риски */
-        position: absolute;
-        top: 50%; /* Позиціюємо вертикальну риску посередині тексту */
-        right: -10px; /* Зсув на відстань від тексту */
-        transform: translateY(-50%); /* Це вирівнює вертикальну риску посередині */
+      .slogan{
+          color:grey;
+          font-family: 'PT Sans', sans-serif;
+          font-size: 12px;
+          margin-top: -10px;
       }
       
-      .menu li:last-child::after {
-        display: none; /* Вимикаємо риску для останнього пункту меню */
-      }
-    .menu a {
-        text-decoration: none; /* Приховуємо підкреслення для посилань */
-        display: block; /* Робимо посилання блочними елементами, щоб займати весь доступний простір */
-        padding: 10px; /* Додаємо відступи між текстом та границею пункту меню */
-        color: #ffffff; /* Колір тексту */
-        font-family: 'PT Sans', sans-serif;
-       
-      }
-
-
-    .burger{
-        width: 100%;
-    }
-
-    .burger-btn{
-        display: none;
-    }
-
-
-    }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    /*adaptive*/
-    @media (max-width: 767px) {
-        .container {
-            margin: 0 auto; /* align in the center */
-            padding: 0 3px; /* Indent 10px on both sides */
-              
-        }
-
-        header{
-            position: relative;
-        }
-
-        header,  footer {
-            font-size: 20px;   
-            line-height: 22px; 
-        }
-        
-        
-        header.content {
-            padding: 20px; 
-        }
-        
-        .retreat{
-            padding-left: 60px;
-            position: relative;
-        }
-        
-        .img1{
-            height: 50px;
-            overflow: auto;
-            float: left; 
-            margin-right: 5px;
-            margin-left: -50px;
-        }
-        
-        .abc{
-            color:grey;
-            font-family: 'PT Sans', sans-serif;
-            font-size: 17px;
-            line-height: 15px;
-            padding-top: 3px;
-        }
-            
-        .slogan{
-            color:grey;
-            font-family: 'PT Sans', sans-serif;
-            font-size: 11px;
-            margin-top: -14px;
-        }
-        
-        .phone {
-            position: absolute;
-            top: -12px;
-            right: 10px; /* Відстань від правого краю контейнера */
-            font-size: 13px; /* Розмір тексту */
-            color:grey; /* Колір тексту */
-            line-height: 16px;
-            font-family: 'PT Sans', sans-serif;
-        
-        }
-        
-        .feedback-link{
-            position: absolute;
-            right: 10px; /* Відстань від правого краю контейнера */
-            font-size: 10px; /* Розмір тексту */
-            font-family: 'PT Sans', sans-serif;
-            color:grey;
-            text-decoration: underline dotted;
-            top: 23px;
-        }
-
-
-
-
-
-
-        nav{
-            display: none;
-	        justify-content: flex-end;
-        }
+      .phone {
+          position: absolute;
+          top: -20px;
+          right: 10px; /* Відстань від правого краю контейнера */
+          font-size: 14px; /* Розмір тексту */
+          color:grey; /* Колір тексту */
+          line-height: 20px;
+          font-family: 'PT Sans', sans-serif;
+          text-transform: uppercase; /* Звертання тексту великими літерами */
+      }  
       
-        .burger-btn{
-            display: block;
-            width: 22px;
-            height: 1px;
-            margin-left: auto;
-            margin-bottom: 100px;
-            
-        }
-
-        .burger.open{
-            width: 200px;
-            height: 350px;
-            background: #1b262f;
-            position: absolute;
-            right: 0;
-            top: 0;
-            padding: 10px 10px;
-            margin-top: 90px;
-        }
-
-        .burger.open.fbx{
-            justify-content: flex-start;
-            flex-direction: column;
-        }
-
-
-        .burger.open nav{
-            display: block;
-            border-top: 1px solid rgba(251, 252, 254, 0.15);
-            width: 100%;
-        }
-
-        .burger.open nav ul{
-            flex-direction: column;
-        }
-
-        .menu a{
-            text-decoration: none; /* Приховуємо підкреслення для посилань */
-            display: block;
-            color: #fff;
-            font-family: 'PT Sans', sans-serif;
-            font-size: 17px;
-            padding-left: 5px;
-            line-height: 30px;
-        }
-
-        ul {
-            list-style-type: none; /* Видаляє крапки для ненумерованих списків (ul) */
-        }
-        
-
-        }
-        
+      .feedback-link{
+          position: absolute;
+          right: 10px; /* Відстань від правого краю контейнера */
+          font-size: 10px; /* Розмір тексту */
+          font-family: 'PT Sans', sans-serif;
+          color:grey;
+          text-decoration: underline dotted;
+          top: 25px;
+      }
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  /* скрываем чекбокс */
+  #menu__toggle {
+      opacity: 0;
+    }
+    /* стилизуем кнопку */
+    .menu__btn {
+      display: flex; /* используем flex для центрирования содержимого */
+      align-items: center;  /* центрируем содержимое кнопки */
+      position: fixed;
+      top: 80px;
+      left: 20px;
+      width: 26px;
+      height: 26px;
+      cursor: pointer;
+      z-index: 1;
+    }
+    /* добавляем "гамбургер" */
+    .menu__btn > span,
+    .menu__btn > span::before,
+    .menu__btn > span::after {
+      display: block;
+      position: absolute;
+      width: 100%;
+      height: 2px;
+      background-color: #616161;
+    }
+    .menu__btn > span::before {
+      content: '';
+      top: -8px;
+    }
+    .menu__btn > span::after {
+      content: '';
+      top: 8px;
+    }
+  
+  
+  
+    /* контейнер меню */
+  .menu_container.hamburger-menu{
+    background-color: transparent;
+  }
+  
+  
+  
+  .menu__box {
+      display: block;
+      position: fixed;
+      visibility: hidden;
+      top: 0;
+      left: -100%;
+      width: 300px;
+      height: 100%;
+      margin: 0;
+      padding: 130px 0;
+      list-style: none;
+      text-align: center;
+      background-color: #6d8fa6;
+      box-shadow: 1px 0px 6px rgba(0, 0, 0, .2);
+    }
+  .menu li::after {
+      display: none;
+  }
+  .menu__item{
+      vertical-align: middle;
+  }
+    /* элементы меню */
+    .menu__item {
+      display: block;
+      padding: 12px 240px;
+      color: #333;
+      font-family: 'Roboto', sans-serif;
+      font-size: 20px;
+      font-weight: 600;
+      text-decoration: none;
+    }
+    .menu__item:hover {
+      background-color: #CFD8DC;
+    }
+  
+    #menu__toggle:checked ~ .menu__btn > span {
+      transform: rotate(45deg);
+    }
+    #menu__toggle:checked ~ .menu__btn > span::before {
+      top: 0;
+      transform: rotate(0);
+    }
+    #menu__toggle:checked ~ .menu__btn > span::after {
+      top: 0;
+      transform: rotate(90deg);
+    }
+    #menu__toggle:checked ~ .menu__box {
+      visibility: visible;
+      left: 0;
+    }
+  
+  
+  
+  
+  
+    
+  
+  
+  
+  
+  
+  
+  
+  }
