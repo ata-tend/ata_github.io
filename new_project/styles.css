@@ -1,15 +1,21 @@
-body {
-    overflow-x: hidden;
-  } 
+html, body, .menu_container{
+    margin: 0;
+    padding: 0;  
+    }
+
+    .menu, .slider {
+        box-sizing: border-box;
+    }
+
 /* Розтягуємо шапку, меню і підвал на всю ширину екрану */
-header, nav, footer {
+header, footer {
     width: 100%;
     color: #fff;
-    
 }
 
-
-
+.menu{
+    width: 100%;
+}
 
     .container {
         max-width: 980px;
@@ -125,7 +131,6 @@ header, nav, footer {
       font-size: 22px;
       color:grey;
       list-style: none;
-      max-width: 980px;
       text-align: center;
      
       margin: auto; /* Автоматично центруємо меню по горизонталі */
@@ -134,6 +139,8 @@ header, nav, footer {
       z-index: 1; /* Розташовуємо контент над фоном */
       
   }
+
+
   .menu li {
       margin-top: -10px;
       display: inline-block;
@@ -163,6 +170,9 @@ header, nav, footer {
       font-family: 'PT Sans', sans-serif;
   }  
   
+  .menu__box{
+    width: 100%;
+  }
   
   
   
@@ -179,6 +189,24 @@ header, nav, footer {
     margin-top: 10px;
     width: 100%; /* Ширина самого слайдера */
     height: 350px; /* Висота слайдера */
+    max-width: 100%;
+    overflow: hidden;
+  }
+
+  .slide {
+    display: none;
+  }.fade {
+    animation-name: fade;
+    animation-duration: 1.5s;
+  }
+  
+  @keyframes fade {
+    0% {
+      opacity: 0.4;
+    }
+    100% {
+      opacity: 1;
+    }
   }
   
   .slider__block{
@@ -200,10 +228,12 @@ header, nav, footer {
   }
   
   .slider__img{
-    height: 50px;
+    height: 100px;
     max-width: 980px;
     max-width: 100%; /* Забезпечуємо, щоб картинка була максимальної ширини, не виходячи за межі контейнера */
     vertical-align: middle; /* Вирівнюємо картинку по вертикалі */
+    width: 100%;
+    height: auto;
   }
   
   
