@@ -1,3 +1,10 @@
+header, nav, footer {
+    transition: transform 0.3s ease;
+}
+
+
+
+
 html, body, .menu_container{
     margin: 0;
     padding: 0;  
@@ -113,6 +120,9 @@ header, footer {
 
 
   /*Main navigation menu*/
+  #menu__toggle {
+    opacity: 0;
+  }
   .menu_container{
       margin: 0; /* Вирівнюємо по центру */
       padding: 0; /* Відступи по 10px з обох сторін */
@@ -181,8 +191,6 @@ header, footer {
   
   
   /*slider*/
-  
-  
   .slider{
     position: relative;
     text-align: center;
@@ -273,6 +281,7 @@ header, footer {
     transform: translateY(-50%); /* Вирівнюємо їх назад на 50% їх власної висоти для центрування */
     padding-top: 30px;
   }
+
   
 
 
@@ -287,8 +296,41 @@ header, footer {
 
 
 
-  @media (max-width: 768px){
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  @media (max-width: 860px){
   
+
       .img1{
           height: 50px;
           overflow: auto;
@@ -335,15 +377,6 @@ header, footer {
   
   
   
-  
-  
-  
-  
-  
-  
-  
-  
-  
   /* скрываем чекбокс */
   #menu__toggle {
       opacity: 0;
@@ -386,8 +419,6 @@ header, footer {
     background-color: transparent;
   }
   
-  
-  
   .menu__box {
       display: block;
       position: fixed;
@@ -406,8 +437,9 @@ header, footer {
   .menu li::after {
       display: none;
   }
-  .menu__item{
+  .menu{
       vertical-align: middle;
+      align-content: center;
   }
     /* элементы меню */
     .menu__item {
@@ -443,12 +475,121 @@ header, footer {
   
   
   
+ /* slider */
+ .slider{
+    height: 200px;
+    margin-top: -170px;
+ }
+.slider__block{
+    height: 150px;
+}
+  
+
+
+
+
+  }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  @media  (max-width: 860px){
+    .menu__box{
+        word-spacing: 9999999px;
+        display: block;
+        width: 100%;
+        color: #7b7b83;
+        text-decoration: none;
+        text-align: center;
+    }
+    .menu__item{
+        text-transform: uppercase;
+        margin-top: 22px;
+    }
     
-  
-  
-  
-  
-  
-  
-  
+
+
+    .slider__button{
+        margin-top: -50px;
+    }
+
+  }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  @media  (max-width: 480px){
+    /*menu*/
+    .menu__box{
+        word-spacing: 9999999px;
+        display: block;
+        width: 100%;
+        color: #7b7b83;
+        text-decoration: none;
+        text-align: center;
+    }
+    .menu__item{
+        text-transform: uppercase;
+        margin-top: 22px;
+    }
+    
+
+
+    /* slider */
+ .slider{
+    height: 200px;
+    margin-top: -170px;
+ }
+.slider__block{
+    height: 300px;
+}
+
+.slider__img{
+    height: 90px;
+}
+
+.button-next{
+   margin-top: -30px;
+}
+
+.button-prew{
+    margin-top: -30px;
+}
+
+.slider__button{
+    margin-top: -60px;
+}
+
+
+
+
+
   }
