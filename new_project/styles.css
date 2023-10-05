@@ -1,654 +1,82 @@
-/* Оголошуємо базові стилі для шапки і підвала */
-header, footer {
-  width: 100%;
-  color: #fff;
+const SliderLine = document.querySelector('.slider__line');
+const images = document.querySelectorAll('.slider__img');
+
+const nextButton = document.querySelector('.button-next');
+const prevButton = document.querySelector('.button-prev');
+
+let count = 0;
+let width;
+
+function init() {
+    width = document.querySelector('.slider__block').offsetWidth;
+    SliderLine.style.width = width * images.length + 'px'; // Fixed this line
+    images.forEach(item => {
+        item.style.width = width + 'px';
+        item.style.height = 'auto';
+    });
+    rollSlider();
 }
 
-/* Ваша інша CSS стилізація тут */
+init();
+window.addEventListener('resize', init);
 
-.menu_container {
-  width: 100%;
+function rollSlider() {
+    SliderLine.style.transform = 'translate(-' + count * width + 'px)';
 }
 
-.container {
-  max-width: 980px;
-  margin: 0 auto;
-  padding: 0 10px;
-}
-
-.object {
-  position: absolute;
-}
-
-
-
-/* Add other styles for header, menu and footer content */
-  header .content {
-      padding: 20px; 
-  }
-  
-  .retreat{
-      padding-left: 10px;
-      position: relative;
-      
-  }
-  
-  .img1{
-      height: 100px;
-      overflow: auto;
-      float: left; 
-      margin-right: 10px;
-  }
-  
-  
-
-  .abc{
-      color:grey;
-      font-family: 'PT Sans', sans-serif;
-      font-size: 36px;
-      line-height: 30px;
-      
-  }
-
-  .slogan{
-      color:grey;
-      font-family: 'PT Sans', sans-serif;
-      font-size: 19px;
-      margin-top: -10px;
-  }
-  
-  .phone {
-      position: absolute;
-      top: -35px;
-      right: 10px; /* Відстань від правого краю контейнера */
-      font-size: 30px; /* Розмір тексту */
-      color:grey; /* Колір тексту */
-      line-height: 36px;
-      font-family: 'PT Sans', sans-serif;
-
-      text-transform: uppercase; /* Звертання тексту великими літерами */
-      
-  }
-  @font-face {
-      font-family: 'PT Sans';
-      src: url('new_project/pt-astra-sans.woff2') format('woff2'); /* Шлях до вашого шрифту */
-      font-weight: normal;
-      font-style: normal;
-  }
-  
-  .feedback-link{
-      position: absolute;
-      right: 10px; /* Відстань від правого краю контейнера */
-      font-size: 19px; /* Розмір тексту */
-      font-family: 'PT Sans', sans-serif;
-      color:grey;
-      text-decoration: underline dotted;
-      top: 60px;
-  }
-
-
-
-
-
-
-
-
-
-
-/*Main navigation menu*/
-#menu__toggle {
-  opacity: 0;
-}
-
-.fbx{
-  padding-top: 200px;
-}
-.menu_container{
-    margin: 0; /* Вирівнюємо по центру */
-    padding: 0; /* Відступи по 10px з обох сторін */
-    box-sizing: border-box;
-    display: inline-block;
-    margin-top: 20px;
-    width: 100%;
-    height: 60px;
-
-    background-color: rgb(97, 96, 96); /* Колір фону прямокутника */
-    z-index: -1; /* Розташовуємо фон позаду контейнера */
-    
-}
-
-.menu{
-    font-size: 22px;
-    color:grey;
-    list-style: none;
-    text-align: center;
-   
-    margin: auto; /* Автоматично центруємо меню по горизонталі */
-    background-color: transparent; /* Прозорий фон контейнера */
-    position: relative; /* Визначаємо позицію як відносиний */
-    z-index: 1; /* Розташовуємо контент над фоном */
-    
-}
-
-
-.menu li {
-    margin-top: -10px;
-    display: inline-block;
-    margin-right: 20px;
-    position: relative; /* Додаємо позиціонування, щоб працювати з псевдоелементом */
-  }
-  
-  .menu li::after {
-    content: "";
-    width: 2px; /* Ширина вертикальної риски */
-    height: 20px; /* Висота вертикальної риски (за бажанням) */
-    background-color: #fff; /* Колір вертикальної риски */
-    position: absolute;
-    top: 50%; /* Позиціюємо вертикальну риску посередині тексту */
-    right: -10px; /* Зсув на відстань від тексту */
-    transform: translateY(-50%); /* Це вирівнює вертикальну риску посередині */
-  }
-  
-  .menu li:last-child::after {
-    display: none; /* Вимикаємо риску для останнього пункту меню */
-  }
-.menu a {
-    text-decoration: none; /* Приховуємо підкреслення для посилань */
-    display: block; /* Робимо посилання блочними елементами, щоб займати весь доступний простір */
-    padding: 10px; /* Додаємо відступи між текстом та границею пункту меню */
-    color: #ffffff; /* Колір тексту */
-    font-family: 'PT Sans', sans-serif;
-}  
-
-.menu__box{
-  width: 100%;
-}
-/*slider*/
-.slider{
-  max-width: 100%;
-  position: relative;
-  text-align: center;
-  margin-top: 0px;
-  width: 100%; /* Ширина самого слайдера */
-  height: 350px; /* Висота слайдера */
-  overflow: hidden;
-
-}
-
-
-.bg{
-  background: 100%;
-}
-
-.slide {
-  display: none;
-}.fade {
-  animation-name: fade;
-  animation-duration: 1.5s;
-}
-
-@keyframes fade {
-  0% {
-    opacity: 0.4;
-  }
-  100% {
-    opacity: 1;
-  }
-}
-
-.slider__block{
-  margin: auto;
-  overflow: hidden;
-  width: 50%; /* Ширина контейнера слайдера */
-  display: grid;
-  grid-template-columns: 1fr auto 1fr; /* Розподіл на 3 колонки з однаковою шириною */
-  align-items: center; /* Вертикально центрувати елементи */
-  text-align: center; /* Центруємо всередині контейнера */
-}
-
-
-
-
-
-.slider__line{
-  display: flex;
-  position: relative;
-  left: 0;
-  transition: transform else 1s;
-  height: 350px;
-}
-
-.slider__img{
-  height: 50px;
-  max-width: 980px;
-  max-width: 100%; /* Забезпечуємо, щоб картинка була максимальної ширини, не виходячи за межі контейнера */
-  vertical-align: middle; /* Вирівнюємо картинку по вертикалі */
-  
-}
-
-
-
-.slider__button{
-  width: 100%;
-  background: none;
-  border: none;
-  
-  font-size: 26px;
-  font-weight: 700;
-  margin: 0 auto;
-  cursor: pointer;
-  display: block;
-  
-}
-
-.button-next{
-  grid-column: 3; /* Розміщення правої кнопки в третій колонці */
-  justify-self: start; /* Вирівняти кнопку по лівому краю колонки */
-  text-align: right;
-  right: 0; /* Позиціонуємо другий об'єкт справа від картинки */
-  padding-right: 110px;
-}
-
-.button-prew{
-  grid-column: 1; /* Розміщення лівої кнопки в першій колонці */
-  justify-self: end; /* Вирівняти кнопку по правому краю колонки */
-  text-align: left;
-  left: 0; /* Позиціонуємо перший об'єкт зліва від картинки */
-  padding-left: 110px;
-}
-
-
-.button-next,
-.button-prew {
-  position: absolute;
-  top: 50%; /* Позиціонуємо об'єкти по вертикалі на 50% відносно контейнера */
-  transform: translateY(-50%); /* Вирівнюємо їх назад на 50% їх власної висоти для центрування */
-  padding-top: 30px;
-}
-
-
-
-
-
-
-/*content*/
-content {
-  width: 100%;
-}
-
-.list{
-  list-style: none; /* Видаляємо маркери списку */
-  padding: 0; /* Видаляємо внутрішні відступи списку */
-  display: flex; /* Встановлюємо гнучкий контейнер для горизонтального розташування */
-}
-.list li{
-  margin-right: 10px;
-}
-
-
-.column {
-  width: 25%; /* Залиште трохи простору між колонками */
-  float: left;
-  margin-right: 2%; /* Залиште трохи простору між колонками */
-}
-
-/* Звільніть плавання для контейнера, щоб вирівнювати його відповідно до вмісту */
-.container::after {
-  content: "";
-  display: table;
-  clear: both;
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-@media (max-width: 860px){
-
-
-    .img1{
-        height: 60px;
-        overflow: auto;
-        float: left; 
-        margin-right: 10px;
-        padding-left:-20px;
+function sliderNext() {
+    count++;
+    if (count >= images.length) {
+        count = 0;
     }
+    rollSlider();
+}
 
-    .abc{
-        color:grey;
-        font-family: 'PT Sans', sans-serif;
-        font-size: 24px;
-        line-height: 16px;
-        margin-top: 10px;
+if (nextButton !== null) nextButton.addEventListener('click', sliderNext);
+
+function sliderPrev() {
+    count--;
+    if (count < 0) {
+        count = images.length - 1;
     }
-    
-    .slogan{
-        color:grey;
-        font-family: 'PT Sans', sans-serif;
-        font-size: 16px;
-        margin-top: -10px;
-    }
-    
-    .phone {
-        position: absolute;
-        top: -20px;
-        right: 10px; /* Відстань від правого краю контейнера */
-        font-size: 20px; /* Розмір тексту */
-        color:grey; /* Колір тексту */
-        line-height: 20px;
-        font-family: 'PT Sans', sans-serif;
-        text-transform: uppercase; /* Звертання тексту великими літерами */
-    }  
-    
-    .feedback-link{
-        position: absolute;
-        right: 10px; /* Відстань від правого краю контейнера */
-        font-size: 16px; /* Розмір тексту */
-        font-family: 'PT Sans', sans-serif;
-        color:grey;
-        text-decoration: underline dotted;
-        top: 30px;
-    }
-
-
-
-/* скрываем чекбокс */
-#menu__toggle {
-    opacity: 0;
-  }
-  /* стилизуем кнопку меню*/
-  .menu__btn {
-    display: flex; /* используем flex для центрирования содержимого */
-    align-items: center;  /* центрируем содержимое кнопки */
-    position: fixed;
-    top: 100px;
-    left: 20px;
-    width: 26px;
-    height: 26px;
-    cursor: pointer;
-    z-index: 1;
-  }
-  /* добавляем "гамбургер" */
-  .menu__btn > span,
-  .menu__btn > span::before,
-  .menu__btn > span::after {
-    display: block;
-    position: absolute;
-    width: 100%;
-    height: 2px;
-    background-color: #acacac;
-  }
-  .menu__btn > span::before {
-    content: '';
-    top: -8px;
-  }
-  .menu__btn > span::after {
-    content: '';
-    top: 8px;
-  }
-
-
-
-  /* контейнер меню */
-.menu_container.hamburger-menu{
-  background-color: transparent;
+    rollSlider();
 }
-.menu__box {
-    word-spacing: 9999999px;
-    width: 300px;
-    color: #7b7b83;
-    text-decoration: none;
-    text-align: center;
-    display: block;
-    position: fixed;
-    visibility: hidden;
-    top: 0;
-    left: -100%;
-    height: 100%;
-    margin: 0;
-    padding: 130px 0;
-    list-style: none;
-    text-align: center;
-    background-color: #494949;
-    box-shadow: 1px 0px 6px rgba(0, 0, 0, .2);
-  }
 
-.menu li::after {
-    display: none;
+if (prevButton !== null) prevButton.addEventListener('click', sliderPrev);
+
+
+let slideIndex = 0;
+showSlides();
+
+function showSlides() {
+  let slides = document.querySelectorAll(".slide");
+  for (let i = 0; i < slides.length; i++) {
+    slides[i].style.display = "none";
+  }
+  slideIndex++;
+  if (slideIndex > slides.length) {
+    slideIndex = 1;
+  }
+  slides[slideIndex - 1].style.display = "block";
+  setTimeout(showSlides, 4000); // Зміна слайдів кожні 4 секунди
 }
-.menu{
-    vertical-align: middle;
-    align-content: center;
-}
-  /* элементы меню */
-  .menu__item {
-    display: block;
-    padding: 12px 240px;
-    color: #333;
-    font-family: 'Roboto', sans-serif;
-    font-size: 20px;
-    font-weight: 600;
-    text-decoration: none;
-    text-transform: uppercase;
-      margin-top: 22px;
-  }
-  .menu__item:hover {
-    background-color: #CFD8DC;
-  }
-
-  #menu__toggle:checked ~ .menu__btn > span {
-    transform: rotate(45deg);
-  }
-  #menu__toggle:checked ~ .menu__btn > span::before {
-    top: 0;
-    transform: rotate(0);
-  }
-  #menu__toggle:checked ~ .menu__btn > span::after {
-    top: 0;
-    transform: rotate(90deg);
-  }
-  #menu__toggle:checked ~ .menu__box {
-    visibility: visible;
-    left: 0;
-  }
 
 
+// script.js
+const header = document.querySelector('header');
+const nav = document.querySelector('nav');
+const footer = document.querySelector('footer');
 
+// Отримуємо висоту блока, який видаляємо (наприклад, header)
+const headerHeight = header.offsetHeight;
 
-
-/* slider */
-.slider{
-  height: 100%;
-  margin-top: -120px;
-}
-.slider__block{
-  height: 150px;
-}
-  .slider__button{
-      margin-top: -90px;
-  }
-
-
-
+// Функція для видалення блока (наприклад, header)
+function removeHeader() {
+    header.style.transform = `translateY(-${headerHeight}px)`;
 }
 
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-@media  (max-width: 480px) {
-  .img1{
-    height: 40px;
-  }
-  .abc{
-    font-size: 16px;
-    line-height: 16px;
-}
-
-.slogan{
-    font-size: 10px;
-    margin-top: -10px;
-}
-
-.phone {
-    font-size: 12px; /* Розмір тексту */
-    line-height: 20px;
-}  
-
-.feedback-link{
-    position: absolute;
-    right: 10px; /* Відстань від правого краю контейнера */
-    font-size: 10px; /* Розмір тексту */
-    font-family: 'PT Sans', sans-serif;
-    color:grey;
-    text-decoration: underline dotted;
-    top: 25px;
-}
-  /*menu*/
-  .menu__box{
-      width: 250px;
-      display: block;
-      text-decoration: none;
-      text-align: center;
-  }
-  .menu__item{
-      text-transform: uppercase;
-      margin-top: 30px;
-  }
-  .menu a {
-   font-size: 14px;
-  }
   
 
-
-  /* slider */
-  .bg{
-    background: none;
-    height: 150px;
-  }
-
-.slider{
-  height: 200px;
-  margin-top: -130px;
-}
-.slider__block{
-  height: 300px;
-}
-
-.slider__img{
-  height: 50px;
-  margin-top: 100px;
-}
-
-
-
-.slider__button{
-  margin-top: -60px;
-}
-
-.button-next{
-  grid-column: 3; /* Розміщення правої кнопки в третій колонці */
-  justify-self: start; /* Вирівняти кнопку по лівому краю колонки */
-  text-align: right;
-  right: 0; /* Позиціонуємо другий об'єкт справа від картинки */
-  padding-right: 40px;
- 
-}
-
-.button-prew{
-  grid-column: 1; /* Розміщення лівої кнопки в першій колонці */
-  justify-self: end; /* Вирівняти кнопку по правому краю колонки */
-  text-align: left;
-  left: 0; /* Позиціонуємо перший об'єкт зліва від картинки */
-  padding-left: 40px;
-
-}
-
-
-.button-next,
-.button-prew {
-  position: absolute;
-  top: 50%; /* Позиціонуємо об'єкти по вертикалі на 50% відносно контейнера */
-  transform: translateY(-50%); /* Вирівнюємо їх назад на 50% їх власної висоти для центрування */
-  padding-top: 55px;
-
-}
-
-
-
-}
