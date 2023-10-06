@@ -80,3 +80,11 @@ function removeHeader() {
 
   
 
+document.querySelectorAll('.big_list').forEach(function (bigListItem) {
+    bigListItem.addEventListener('mouseenter', function () {
+        document.querySelectorAll('.big_list').forEach(function (item) {
+            item.style.transform = 'translateY(0)';
+        });
+        bigListItem.style.transform = 'translateY(-' + (bigListItem.offsetHeight - 10) + 'px)';
+    });
+});
