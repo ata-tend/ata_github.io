@@ -492,10 +492,79 @@ content {
 
 
 
+/*footer*/
+
+* {
+  margin: 0;
+}
+
+.content {
+ min-height: calc(100vh - -120px);
+}
+.footer {
+  height: 200px;
+  margin-left: -600px;
+  margin-right: -600px;
+  background: rgb(99, 99, 99);
+  display: flex;
+  justify-content: space-between; /* Розташування елементів між собою */
+}
+
+
+.footer1,
+.footer-menu,
+.footer2 {
+  flex: 1; /* Кожен елемент отримує однаковий простір */
+}
 
 
 
 
+
+.footer1{
+  padding-left: 350px;
+  padding-top: 40px;
+  text-align:left;
+  color: #fff; /* Колір тексту футера */
+  font-size: 16px;
+  font-family: 'PT Sans', sans-serif;
+}
+
+/* Стилі для списку без крапок */
+ul {
+  list-style-type: none;
+}
+
+.footer2 {
+  display: inline-block;
+  margin-right: 90px;
+  padding-top: 40px;
+  font-family: 'PT Sans', sans-serif;
+}
+
+.footer_menu{
+  color: #fff; /* Колір тексту футера */
+  font-size: 16px;
+ line-height: 22px;
+}
+
+.footer3 {
+  padding-right: 550px;
+  padding-top: 40px;
+  text-align: left;
+  color: #fff; /* Колір тексту футера */
+  font-size: 16px;
+  font-family: 'PT Sans', sans-serif;
+}
+
+.footer3 a{
+  padding-right: 0px;
+  padding-top: 40px;
+  text-align: left;
+  color: #fff; /* Колір тексту футера */
+  font-size: 16px;
+  font-family: 'PT Sans', sans-serif;
+}
 
 
 
@@ -1336,6 +1405,89 @@ content {
 }
 
 
+
+
+
+
+
+
+
+
+*footer*/
+
+* {
+  margin: 0;
+}
+
+.content {
+ min-height: calc(100vh - -120px);
+}
+.footer {
+  height: 200px;
+  margin-left: -40px;
+  margin-right: -40px;
+  background: rgb(99, 99, 99);
+  display: flex;
+  justify-content: space-between; /* Розташування елементів між собою */
+}
+
+
+.footer1,
+.footer-menu,
+.footer2 {
+  flex: 1; /* Кожен елемент отримує однаковий простір */
+}
+
+
+
+
+
+.footer1{
+  padding-left: 50px;
+  padding-top: 30px;
+  text-align:left;
+  color: #fff; /* Колір тексту футера */
+  font-size: 10px;
+  font-family: 'PT Sans', sans-serif;
+}
+
+/* Стилі для списку без крапок */
+ul {
+  list-style-type: none;
+}
+
+.footer2 {
+  display: inline-block;
+  margin-right: 90px;
+  padding-top: 30px;
+  font-family: 'PT Sans', sans-serif;
+}
+
+.footer_menu{
+  color: #fff; /* Колір тексту футера */
+  font-size: 11px;
+  line-height: 15px;
+  text-align: center;
+}
+
+.footer3 {
+  margin-left: -20px;
+  padding-right: 30px;
+  padding-top: 30px;
+  text-align: left;
+  color: #fff; /* Колір тексту футера */
+  font-size: 10px;
+  font-family: 'PT Sans', sans-serif;
+}
+
+.footer3 a{
+  padding-right: 30px;
+  padding-top: 30px;
+  text-align: left;
+  color: #fff; /* Колір тексту футера */
+  font-size: 10px;
+  font-family: 'PT Sans', sans-serif;
+}
 
 
 
