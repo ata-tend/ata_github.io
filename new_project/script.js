@@ -88,3 +88,8 @@ document.querySelectorAll('.big_list').forEach(function (bigListItem) {
         bigListItem.style.transform = 'translateY(-' + (bigListItem.offsetHeight - 10) + 'px)';
     });
 });
+
+
+
+
+
