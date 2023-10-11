@@ -1,1500 +1,330 @@
-/* Оголошуємо базові стилі для шапки і підвала */
-header, footer {
-  width: 100%;
-  color: #fff;
-}
-
-/* Ваша інша CSS стилізація тут */
-
-.menu_container {
-  width: 100%;
-}
-
-.container {
-  max-width: 980px;
-  margin: 0 auto;
-  padding: 0 10px;
-}
-
-.object {
-  position: absolute;
-}
-
-
-
-/* Add other styles for header, menu and footer content */
-  header .content {
-      padding: 20px; 
-  }
-  
-  .retreat{
-      padding-left: 10px;
-      position: relative;
-      
-  }
-  
-  .img1{
-      height: 100px;
-      overflow: auto;
-      float: left; 
-      margin-right: 10px;
-  }
-  
-  
-
-  .abc{
-      color:grey;
-      font-family: 'PT Sans', sans-serif;
-      font-size: 36px;
-      line-height: 30px;
-      
-  }
-
-  .slogan{
-      color:grey;
-      font-family: 'PT Sans', sans-serif;
-      font-size: 19px;
-      margin-top: -10px;
-  }
-  
-  .phone {
-      position: absolute;
-      top: -35px;
-      right: 10px; /* Відстань від правого краю контейнера */
-      font-size: 30px; /* Розмір тексту */
-      color:grey; /* Колір тексту */
-      line-height: 36px;
-      font-family: 'PT Sans', sans-serif;
-
-      text-transform: uppercase; /* Звертання тексту великими літерами */
-      
-  }
-  @font-face {
-      font-family: 'PT Sans';
-      src: url('new_project/pt-astra-sans.woff2') format('woff2'); /* Шлях до вашого шрифту */
-      font-weight: normal;
-      font-style: normal;
-  }
-  
-  .feedback-link{
-      position: absolute;
-      right: 10px; /* Відстань від правого краю контейнера */
-      font-size: 19px; /* Розмір тексту */
-      font-family: 'PT Sans', sans-serif;
-      color:grey;
-      text-decoration: underline dotted;
-      top: 60px;
-  }
-
-
-
-
-
-
-
-
-
-
-/*Main navigation menu*/
-#menu__toggle {
-  opacity: 0;
-}
-
-.fbx{
-  padding-top: 200px;
-}
-.menu_container{
-    margin: 0; /* Вирівнюємо по центру */
-    padding: 0; /* Відступи по 10px з обох сторін */
-    box-sizing: border-box;
-    display: inline-block;
-    margin-top: 20px;
-    width: 100%;
-    height: 60px;
-
-    background-color: rgb(97, 96, 96); /* Колір фону прямокутника */
-    z-index: -1; /* Розташовуємо фон позаду контейнера */
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
     
-}
+    <title>3-ий макет</title>
+</head>
+<body>
 
-.menu{
-    font-size: 22px;
-    color:grey;
-    list-style: none;
-    text-align: center;
-   
-    margin: auto; /* Автоматично центруємо меню по горизонталі */
-    background-color: transparent; /* Прозорий фон контейнера */
-    position: relative; /* Визначаємо позицію як відносиний */
-    z-index: 1; /* Розташовуємо контент над фоном */
+    <header class="object">  header content 
+        <div class="container">
+            
+            <div class="retreat">
+                <a href="#">
+                    <img class="img1" src="1.jpeg" alt="логотип">
+                </a>
+                    <h1 class="abc">Назва <br> компанії</h1>
+                    <p class="slogan">найкрутіша компанія</p>
+                    <p class="phone">+7(499)777-77-77<br>+7(499)777-77-77</p> 
+                    <a href="#popup" id="feedback-link" class="feedback-link">Зворотній зв'язок</a>
+                    
+            </div>
+        </div>
+    </header>
+
+
     
-}
-
-
-.menu li {
-    margin-top: -10px;
-    display: inline-block;
-    margin-right: 20px;
-    position: relative; /* Додаємо позиціонування, щоб працювати з псевдоелементом */
-  }
-  
-  .menu li::after {
-    content: "";
-    width: 2px; /* Ширина вертикальної риски */
-    height: 20px; /* Висота вертикальної риски (за бажанням) */
-    background-color: #fff; /* Колір вертикальної риски */
-    position: absolute;
-    top: 50%; /* Позиціюємо вертикальну риску посередині тексту */
-    right: -10px; /* Зсув на відстань від тексту */
-    transform: translateY(-50%); /* Це вирівнює вертикальну риску посередині */
-  }
-  
-  .menu li:last-child::after {
-    display: none; /* Вимикаємо риску для останнього пункту меню */
-  }
-.menu a {
-    text-decoration: none; /* Приховуємо підкреслення для посилань */
-    display: block; /* Робимо посилання блочними елементами, щоб займати весь доступний простір */
-    padding: 10px; /* Додаємо відступи між текстом та границею пункту меню */
-    color: #ffffff; /* Колір тексту */
-    font-family: 'PT Sans', sans-serif;
-}  
-
-.menu__box{
-  width: 100%;
-}
-/*slider*/
-.slider{
-  max-width: 100%;
-  position: relative;
-  text-align: center;
-  margin-top: 0px;
-  width: 100%; /* Ширина самого слайдера */
-  height: 350px; /* Висота слайдера */
-  overflow: hidden;
-
-}
-
-
-.bg{
-  background: 100%;
-}
-
-.slide {
-  display: none;
-}.fade {
-  animation-name: fade;
-  animation-duration: 1.5s;
-}
-
-@keyframes fade {
-  0% {
-    opacity: 0.4;
-  }
-  100% {
-    opacity: 1;
-  }
-}
-
-.slider__block{
-  margin: auto;
-  overflow: hidden;
-  width: 50%; /* Ширина контейнера слайдера */
-  display: grid;
-  grid-template-columns: 1fr auto 1fr; /* Розподіл на 3 колонки з однаковою шириною */
-  align-items: center; /* Вертикально центрувати елементи */
-  text-align: center; /* Центруємо всередині контейнера */
-}
-
-
-
-
-
-.slider__line{
-  display: flex;
-  position: relative;
-  left: 0;
-  transition: transform else 1s;
-  height: 350px;
-}
-
-.slider__img{
-  height: 50px;
-  max-width: 980px;
-  max-width: 100%; /* Забезпечуємо, щоб картинка була максимальної ширини, не виходячи за межі контейнера */
-  vertical-align: middle; /* Вирівнюємо картинку по вертикалі */
-  
-}
-
-
-
-.slider__button{
-  width: 100%;
-  background: none;
-  border: none;
-  
-  font-size: 26px;
-  font-weight: 700;
-  margin: 0 auto;
-  cursor: pointer;
-  display: block;
-  
-}
 
-.button-next{
-  grid-column: 3; /* Розміщення правої кнопки в третій колонці */
-  justify-self: start; /* Вирівняти кнопку по лівому краю колонки */
-  text-align: right;
-  right: 0; /* Позиціонуємо другий об'єкт справа від картинки */
-  padding-right: 110px;
-}
+<!-- Основне навігаційне меню -->
 
-.button-prew{
-  grid-column: 1; /* Розміщення лівої кнопки в першій колонці */
-  justify-self: end; /* Вирівняти кнопку по правому краю колонки */
-  text-align: left;
-  left: 0; /* Позиціонуємо перший об'єкт зліва від картинки */
-  padding-left: 110px;
-}
+<section class="container fbx">
 
+    <div class="menu_container hamburger-menu">
+        <input id="menu__toggle" type="checkbox" />
+            
+                <ul class="menu menu__box">
+                    <li><a class="menu__item" href="#">Головна</a></li>
+                    <li><a class="menu__item" href="#">Каталог</a></li>
+                    <li><a class="menu__item" href="#">Доставка і оплата</a></li>
+                    <li><a class="menu__item" href="#">Прайс-лист</a></li>
+                    <li><a class="menu__item" href="#">Контакти</a></li>
+                </ul>
+                
+    </div>
+        <label class="menu__btn" for="menu__toggle">
+             <span></span>
+        </label>
 
-.button-next,
-.button-prew {
-  position: absolute;
-  top: 50%; /* Позиціонуємо об'єкти по вертикалі на 50% відносно контейнера */
-  transform: translateY(-50%); /* Вирівнюємо їх назад на 50% їх власної висоти для центрування */
-  padding-top: 30px;
-}
 
 
 
 
 
+<!--slider-->
 
-/*content*/
-content {
-  width: 100%;
-}
+<section class="slider">
 
-.list{
-  list-style: none; /* Видаляємо маркери списку */
-  padding: 0; /* Видаляємо внутрішні відступи списку */
-  display: flex; /* Встановлюємо гнучкий контейнер для горизонтального розташування */
-  margin-top: 5px;
-}
-.list li{
-  margin-right: 10px;
-}
+<img src="fon.jpg" class="bg" alt="bg">
 
+    <div class="slider__block">
 
+        <div class="slider__line">
+            <div class="slide fade">
+                <img src="02.jpeg" class="slider__img" alt="1">
+            </div>
+            <div class="slide fade">
+                <img src="03.jpg" class="slider__img" alt="2">
+            </div>
+            <div class="slide fade">
+                <img src="04.png" class="slider__img" alt="3">
+            </div>
+        </div>
+    </div>
 
+<button class="slider__button button-prew" type="button" aria-label="Pervious">
+    &lt;
+</button>
 
-/* Звільніть плавання для контейнера, щоб вирівнювати його відповідно до вмісту */
-.container_product::after {
-  content: "";
-  display: table;
-  clear: both;
-}
+<button class="slider__button button-next" type="button" aria-label="Next">
+    &gt;
 
 
-.column_leftblock{
-  width: 20%; 
-  float: left;
-  margin-right: 2%; /* Залиште трохи простору між колонками */
-  margin-left: -40px;
-}
+</section>
+<script src="script.js">
+
+</script>
+
+
+
+<!--content-->
+<content class="content">
+    <ul class="list">
+        <li>Головна</li>
+        <li>Каталог</li>
+        <li>Побутова техніка</li>   
+    </ul>
+
+
+   <!--Перша колонка--> 
+
+    <div class="column_leftblock"> 
+        <ul class="menu_left">
+            <li class="big_list"><a href="#">Автомобілі</a></li>
+            <li class="big_list"><a href="#">Побутова техніка</a>
+                    <ul>
+                        <li class="litle_list"><a href="#">Мікрохвильовки</a></li>
+                        <li class="litle_list"><a href="#">Холодильники</a></li>
+                        <li class="litle_list"><a href="#">Посудомийні машини</a></li>
+                        <li class="litle_list"><a href="#">Чайники</a></li>
+                    </ul>
+            </li>
+            <li class="big_list"><a href="#">Мобільна техніка</a></li>
+            <li class="big_list"><a href="#">Комп'ютери</a></li>
+            <li class="big_list"><a href="#">Одяг</a></li>
+            <li class="big_list"><a href="#">Нерухомість</a></li>
+        </ul>
+
+        <img src="icon.jpg" class="icon" alt="Прайс-лист">
+        <p class="price_list">Прайс-лист</p>
+
+
+    </div>
+
+
+
+
+    <div class="column_centerblock"> <!--Друга колонка-->
+
+        <div class="product_container"> 
+
+            <div class="product">
+                     <div class="rectangle">
+                        <img src="foto.jpg" class="foto_product" alt="Зображення">
+                        <p class="text_product"><a href="#">Найкрутіший чайник, який треба купити!</a></p>
+                        <p class="price">1900 грн</p>
+                        <img src="basket.jpeg" class="b" alt="Зображення">
+                    </div>
+                 
+            </div>
+        
+
+            <div class="product">
+                <div class="ccontainer_product"> <!-- ???? -->
+                    <div class="rectangle">
+                        <img src="foto.jpg" class="foto_product" alt="Зображення">
+                        <p class="text_product"><a href="#">Найкрутіший чайник, який треба купити!</a></p>
+                        <p class="price">1900 грн</p>
+                        <img src="basket.jpeg" class="b" alt="Зображення">
+                    
+                    </div>
+                </div>   
+            </div>
+
+
+            <div class="product">
+                <div class="container_product"> <!-- ???? -->
+                    <div class="rectangle">
+                        <img src="foto.jpg" class="foto_product" alt="Зображення">
+                        <p class="text_product"><a href="#">Найкрутіший чайник, який треба купити!</a></p>
+                        <p class="price">1900 грн</p>
+                        <img src="basket.jpeg" class="b" alt="Зображення">
+                    </div>
+                </div>   
+            </div>
+
+            <div class="product">
+                <div class="container_product"> <!-- ???? -->
+                    <div class="rectangle">
+                        <img src="foto.jpg" class="foto_product" alt="Зображення">
+                        <p class="text_product"><a href="#">Найкрутіший чайник, який треба купити!</a></p>
+                        <p class="price">1900 грн</p>
+                        <img src="basket.jpeg" class="b" alt="Зображення">
+                    </div>
+                </div>   
+            </div>
+
+
+            <div class="product">
+                <div class="container_product"> <!-- ???? -->
+                    <div class="rectangle">
+                        <img src="foto.jpg" class="foto_product" alt="Зображення">
+                        <p class="text_product"><a href="#">Найкрутіший чайник, який треба купити!</a></p>
+                        <p class="price">1900 грн</p>
+                        <img src="basket.jpeg" class="b" alt="Зображення">
+                    </div>
+                </div>   
+            </div>
+
+        </div> 
+
+
+        
+        <div class="page">
+           <ul class="number">
+                <li class="num">1</li>
+                <li class="num">2</li>
+                <li class="num active">3</li>
+                <li class="num">4</li>
+                <li class="num">5</li>
+                <li class="num">6</li>
+                <li class="num">7</li>
+            </ul> 
+        </div>
+
+
+        <div class="block"></div> <!--горизонтальна лінія-->
+          
+        
+            <div class="bottom_text">
+                <div class="bottom_column"> <!-- Ваш вміст для першої колонки -->
+                    <p class="p1">
+                        Компанія "Піксель Плюс" існує більше 6 років, за цей час ми брали участь
+                        у розробці більше ніж 700 сайтів, тому можемо впевнено називати себе професіоналами. 
+                        На даний момент наш колектив складається із більш ніж 30 співробітників, що працюють
+                        в двох офісах у Києві і Львові. Характерними для цього жанру мотиви: нерозділеної
+                        любові, прощання з молодістю, згасання душі.
+                    </p>
+                </div>
+
+
+                <div class="bottom_column"><!-- Ваш вміст для другої колонки -->
+                    <p class="p2">
+                        Одним з основних напрямків робіт нашої компанії є пошукове
+                         просування сайтів, на даний момент ми працюємо з більш ніж 
+                         150 постійними клієнтами по більш ніж 11 000 пошуковим запитам. 
+                         При цьому в роботі основний акцент ми робимо на якості робіт, і так 
+                         само приділяємо особисті унікальні розробки в області SEO просування.
+                          На даний момент відділ SEO складається з 9 чоловік під керівництвом 
+                          ведучого спеціаліста, переважно працюючи у нашому київському офісі.   
+                    </p>
+                </div>
+            </div>
+              
+    </div>  
+</content>
+
+
+
+
+
+<!--footer-->
 
-.menu_left {
-  list-style-type: none;
-  padding-left: 40px;
-}
-.menu_left a {
-  text-decoration: none; /* Видаляємо підкреслення гіперпосилань */
-  color: #000; /* Задаємо колір тексту гіперпосилань */
-}
 
-
-
-.litle_list {
-  display: none;
-}
-
-
-.menu_left li:hover .litle_list {
-  display: block;
-}
-
-
-
-
-
-
-
-
-
-.big_list{
-  margin: 10px 0;
-  font-size: 18px;
-  list-style: none;
-  color: #4e4e4e; /* Колір тексту */
-  font-family: 'PT Sans', sans-serif;
-  line-height: 22px;
-}
-
-.litle_list{
-  font-size: 16px;
-  color: #4e4e4e; /* Колір тексту */
-  font-family: 'PT Sans', sans-serif;
-  line-height: 22px;
-}
-
-.icon{
-  height: 100px;
-  padding-top: 80px;
-  padding-left: 60px;
-}
-
-.price_list{
-  font-size: 24px;
-  font-weight: bold;
-  color: #202020; /* Колір тексту */
-  font-family: 'PT Sans', sans-serif;
-  margin-top: 10px;
-  padding-left: 40px;
-
-}
-
-
-
-
-.column_centerblock{
-  width: 80%; 
-  float: right;
-  margin-right: 10px;
-}
-
-.product_container {
-  display: grid; /* Встановлюємо властивість display на grid для контейнера */
-  justify-content: space-between; /* Розташовуємо елементи з рівномірним відступом між ними */
-  align-items: center; /* Вирівнюємо елементи вертикально по центру */
-  grid-template-columns: repeat(3, 1fr); /* Розміщуємо товари в 3 колонки з однаковою шириною */
-  margin-top: -10px;
-}
-
-
-.product{
-  padding-top: 20px;
-  padding-right: 10px;
-}
-
-
-.rectangle {
-  width: 240px;
-  height: 360px;
-  background-color: rgb(163, 163, 163);
-  border: none;
-  position: relative; /* Задаємо "relative" позицію, щоб зміст був позиціонований відносно цього блоку */
-
-}
-
-.foto_product{
-  width: 200px;
-  padding-top: 20px;
-  padding-left: 20px;
-}
-
-.text_product{
-  font-size: 14px;
-  text-align: left;
-  padding-left: 20px;
-  padding-right: 20px;
-  color: #202020;
-  font-family: 'PT Sans', sans-serif;
-}
-.text_product a{
-  text-decoration: none; /* Забирає підкреслення з усіх посилань */
-  color: #2c2c2c;
-}
-
-.price{
-  font-size: 22px;
-  font-weight: bold;
-  padding-left: 20px;
-  padding-top: 30px;
-  color: #202020;
-  font-family: 'PT Sans', sans-serif;
-}
-
-.b{
-  width: 40px;
-  margin-left: 10px; /* Додайте відстань між ціною і картинкою кошика */
-  float: right; /* Змініть розташування на праворуч */
-  vertical-align: middle; /* За допомогою vertical-align вирівнюємо по вертикалі */
-  margin-right: 10px; /* Додаємо відстань між картинкою і ціною */
-}
-
-
-
-
-.page{
-  display: flex;
-  justify-content: center; /* Центруємо елементи по горизонталі */
-  align-items: center; /* Центруємо елементи по вертикалі */
-}
-
-.number{
-  list-style: none; /* Видаляємо маркери списку */
-  display: flex; /* Встановлюємо гнучкий контейнер для горизонтального розташування */
-  margin-top: 30px;
-  color: #202020;
-  font-family: 'PT Sans', sans-serif;
-}
-
-.num{
-  padding-right: 30px;
-  font-size: 12px;
-}
-.active{
-  font-size: 18px;
-  font-weight: bold;
-  margin-top: -4px;
-}
-
-
-
-/*горизонтальна лінія*/
-.block {
-  border-bottom: 1px solid #8d8d8d; /* Тут ви можете змінити товщину та колір риски */
-  padding-top: 40px;
-  padding-bottom: 10px; /* Опціонально: додайте відступ знизу, щоб риска була вище тексту */
-  width: 750px; 
-}
-
-
-
-
-.bottom_text {
-  display: flex; /* Встановлюємо контейнеру властивість "flex" для використання flexbox */
-}
-
-.bottom_column {
-  flex: 50%; /* Розділіть доступний простір між колонками порівну */
-  padding: 10px; /* Опціонально: додайте відступ для кращого розділення вмісту */
-}
-
-.p1 {
-  flex: 3; /* 30% ширини */
-}
-
-.p2 {
-  flex: 7; /* 70% ширини */
-}
-
-
-
-/*footer*/
-
-* {
-  margin: 0;
-}
-
-.content {
- min-height: calc(100vh - -120px);
-}
-.footer {
-  height: 200px;
-  margin-left: -600px;
-  margin-right: -600px;
-  background: rgb(99, 99, 99);
-  display: flex;
-  justify-content: space-between; /* Розташування елементів між собою */
-}
-
-
-.footer1,
-.footer-menu,
-.footer2 {
-  flex: 1; /* Кожен елемент отримує однаковий простір */
-}
-
-
-
-
-
-.footer1{
-  padding-left: 350px;
-  padding-top: 40px;
-  text-align:left;
-  color: #fff; /* Колір тексту футера */
-  font-size: 16px;
-  font-family: 'PT Sans', sans-serif;
-}
-
-/* Стилі для списку без крапок */
-ul {
-  list-style-type: none;
-}
-
-.footer2 {
-  display: inline-block;
-  margin-right: 90px;
-  padding-top: 40px;
-  font-family: 'PT Sans', sans-serif;
-}
-
-.footer_menu{
-  color: #fff; /* Колір тексту футера */
-  font-size: 16px;
- line-height: 22px;
-}
-
-.footer3 {
-  padding-right: 550px;
-  padding-top: 40px;
-  text-align: left;
-  color: #fff; /* Колір тексту футера */
-  font-size: 16px;
-  font-family: 'PT Sans', sans-serif;
-}
-
-.footer3 a{
-  padding-right: 0px;
-  padding-top: 40px;
-  text-align: left;
-  color: #fff; /* Колір тексту футера */
-  font-size: 16px;
-  font-family: 'PT Sans', sans-serif;
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-@media (max-width: 860px){
-
-
-    .img1{
-        height: 60px;
-        overflow: auto;
-        float: left; 
-        margin-right: 10px;
-        padding-left:-20px;
-    }
-
-    .abc{
-        color:grey;
-        font-family: 'PT Sans', sans-serif;
-        font-size: 24px;
-        line-height: 16px;
-        margin-top: 10px;
-    }
-    
-    .slogan{
-        color:grey;
-        font-family: 'PT Sans', sans-serif;
-        font-size: 16px;
-        margin-top: -10px;
-    }
-    
-    .phone {
-        position: absolute;
-        top: -20px;
-        right: 10px; /* Відстань від правого краю контейнера */
-        font-size: 20px; /* Розмір тексту */
-        color:grey; /* Колір тексту */
-        line-height: 20px;
-        font-family: 'PT Sans', sans-serif;
-        text-transform: uppercase; /* Звертання тексту великими літерами */
-    }  
-    
-    .feedback-link{
-        position: absolute;
-        right: 10px; /* Відстань від правого краю контейнера */
-        font-size: 16px; /* Розмір тексту */
-        font-family: 'PT Sans', sans-serif;
-        color:grey;
-        text-decoration: underline dotted;
-        top: 30px;
-    }
-
-
-
-/* скрываем чекбокс */
-#menu__toggle {
-    opacity: 0;
-  }
-  /* стилизуем кнопку меню*/
-  .menu__btn {
-    display: flex; /* используем flex для центрирования содержимого */
-    align-items: center;  /* центрируем содержимое кнопки */
-    position: fixed;
-    top: 100px;
-    left: 20px;
-    width: 26px;
-    height: 26px;
-    cursor: pointer;
-    z-index: 1;
-  }
-  /* добавляем "гамбургер" */
-  .menu__btn > span,
-  .menu__btn > span::before,
-  .menu__btn > span::after {
-    display: block;
-    position: absolute;
-    width: 100%;
-    height: 2px;
-    background-color: #acacac;
-  }
-  .menu__btn > span::before {
-    content: '';
-    top: -8px;
-  }
-  .menu__btn > span::after {
-    content: '';
-    top: 8px;
-  }
-
-
-
-  /* контейнер меню */
-.menu_container.hamburger-menu{
-  background-color: transparent;
-}
-.menu__box {
-    word-spacing: 9999999px;
-    width: 300px;
-    color: #7b7b83;
-    text-decoration: none;
-    text-align: center;
-    display: block;
-    position: fixed;
-    visibility: hidden;
-    top: 0;
-    left: -100%;
-    height: 100%;
-    margin: 0;
-    padding: 130px 0;
-    list-style: none;
-    text-align: center;
-    background-color: #494949;
-    box-shadow: 1px 0px 6px rgba(0, 0, 0, .2);
-  }
-
-.menu li::after {
-    display: none;
-}
-.menu{
-    vertical-align: middle;
-    align-content: center;
-}
-  /* элементы меню */
-  .menu__item {
-    display: block;
-    padding: 12px 240px;
-    color: #333;
-    font-family: 'Roboto', sans-serif;
-    font-size: 20px;
-    font-weight: 600;
-    text-decoration: none;
-    text-transform: uppercase;
-      margin-top: 22px;
-  }
-  .menu__item:hover {
-    background-color: #CFD8DC;
-  }
-
-  #menu__toggle:checked ~ .menu__btn > span {
-    transform: rotate(45deg);
-  }
-  #menu__toggle:checked ~ .menu__btn > span::before {
-    top: 0;
-    transform: rotate(0);
-  }
-  #menu__toggle:checked ~ .menu__btn > span::after {
-    top: 0;
-    transform: rotate(90deg);
-  }
-  #menu__toggle:checked ~ .menu__box {
-    visibility: visible;
-    left: 0;
-  }
-
-
-
-
-
-/* slider */
-.slider{
-  height: 100%;
-  margin-top: -120px;
-}
-.slider__block{
-  height: 150px;
-}
-  .slider__button{
-      margin-top: -90px;
-  }
-
-
-
-
-
-
-
-/*content*/
-content {
-  width: 100%;
-}
-
-.list{
-  list-style: none; /* Видаляємо маркери списку */
-  padding: 0; /* Видаляємо внутрішні відступи списку */
-  display: flex; /* Встановлюємо гнучкий контейнер для горизонтального розташування */
-  margin-top: -40px;
-  font-size: 14px;
-}
-.list li{
-  margin-right: 10px;
-}
-
-
-
-
-/* Звільніть плавання для контейнера, щоб вирівнювати його відповідно до вмісту */
-.container_product::after {
-  content: "";
-  display: table;
-  clear: both;
-}
-
-
-.column_leftblock{
-  width: 20%; 
-  float: left;
-  margin-right: 2%; /* Залиште трохи простору між колонками */
-  margin-left: -40px;
-}
-
-.menu_left {
-  list-style-type: none;
-  padding-left: 40px;
-}
-.menu_left a {
-  text-decoration: none; /* Видаляємо підкреслення гіперпосилань */
-  color: #000; /* Задаємо колір тексту гіперпосилань */
-}
-
-.litle_list {
-  display: none;
-}
-
-
-.menu_left li:hover .litle_list {
-  display: block;
-}
-
-
-
-
-.big_list{
-  font-size: 14px;
-  list-style: none;
-  color: #4e4e4e; /* Колір тексту */
-  font-family: 'PT Sans', sans-serif;
-  line-height: 20px;
-  margin: 10px 0;
-}
-
-.litle_list{
-  font-size: 12px;
-  color: #4e4e4e; /* Колір тексту */
-  font-family: 'PT Sans', sans-serif;
-  line-height: 22px;
-}
-
-.icon{
-  height: 50px;
-  padding-top: 80px;
-  padding-left: 60px;
-}
-
-.price_list{
-  font-size: 16px;
-  font-weight: bold;
-  color: #202020; /* Колір тексту */
-  font-family: 'PT Sans', sans-serif;
-  margin-top: 10px;
-  padding-left: 50px;
-
-}
-
-
-
-
-.column_centerblock{
-  width: 75%; 
-  float: right;
-  margin-right: 0;
-  margin-top: 10px; 
-  margin-left: 10px;
-}
-
-.product_container {
-  display: grid; /* Встановлюємо властивість display на grid для контейнера */
-  justify-content: space-between; /* Розташовуємо елементи з рівномірним відступом між ними */
-  align-items: center; /* Вирівнюємо елементи вертикально по центру */
-  grid-template-columns: repeat(1, 1fr); /* Розміщуємо товари в 3 колонки з однаковою шириною */
-  margin-top: -30px;
-  margin-right: -10px;
-}
-
-
-.product{
-  padding-top: 20px;
-  margin-left: 50px ;
-}
-
-
-.rectangle {
-  width: 150px;
-  height: 240px;
-  background-color: rgb(163, 163, 163);
-  border: none;
-  position: relative; /* Задаємо "relative" позицію, щоб зміст був позиціонований відносно цього блоку */
-}
-
-.foto_product{
-  width: 130px;
-  padding-top: 10px;
-  padding-left: 10px;
-}
-
-.text_product{
-  font-size: 12px;
-  text-align: left;
-  padding-left: 10px;
-  padding-right: 20px;
-  color: #202020;
-  font-family: 'PT Sans', sans-serif;
-}
-.text_product a{
-  text-decoration: none; /* Забирає підкреслення з усіх посилань */
-  color: #2c2c2c;
-}
-
-
-.price{
-  font-size: 14px;
-  font-weight: bold;
-  padding-left: 10px;
-  margin-top: -20px;
-  color: #202020;
-  font-family: 'PT Sans', sans-serif;
-}
-
-
-.page{
-  display: flex;
-  justify-content: center; /* Центруємо елементи по горизонталі */
-  align-items: center; /* Центруємо елементи по вертикалі */
-}
-
-.number{
-  list-style: none; /* Видаляємо маркери списку */
-  display: flex; /* Встановлюємо гнучкий контейнер для горизонтального розташування */
-  margin-top: 30px;
-  color: #202020;
-  font-family: 'PT Sans', sans-serif;
-}
-
-.num{
-  padding-right: 30px;
-  font-size: 12px;
-}
-.active{
-  font-size: 18px;
-  font-weight: bold;
-  margin-top: -4px;
-}
-
-
-
-/*горизонтальна лінія*/
-.block {
-  border-bottom: 1px solid #8d8d8d; /* Тут ви можете змінити товщину та колір риски */
-  padding-top: 40px;
-  padding-bottom: 10px; /* Опціонально: додайте відступ знизу, щоб риска була вище тексту */
-  width: 270px; 
-}
-
-
-
-
-.bottom_text {
-  display: flex; /* Встановлюємо контейнеру властивість "flex" для використання flexbox */
-}
-
-.bottom_column {
-  flex: 50%; /* Розділіть доступний простір між колонками порівну */
-  padding: 10px; /* Опціонально: додайте відступ для кращого розділення вмісту */
-}
-
-.p1 {
-  flex: 3; /* 30% ширини */
-}
-
-.p2 {
-  flex: 7; /* 70% ширини */
-}
-
-
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-@media  (max-width: 480px) {
-  .img1{
-    height: 40px;
-  }
-  .abc{
-    font-size: 16px;
-    line-height: 16px;
-}
-
-.slogan{
-    font-size: 10px;
-    margin-top: -10px;
-}
-
-.phone {
-    font-size: 12px; /* Розмір тексту */
-    line-height: 20px;
-}  
-
-.feedback-link{
-    position: absolute;
-    right: 10px; /* Відстань від правого краю контейнера */
-    font-size: 10px; /* Розмір тексту */
-    font-family: 'PT Sans', sans-serif;
-    color:grey;
-    text-decoration: underline dotted;
-    top: 25px;
-}
-  /*menu*/
-  .menu__box{
-      width: 250px;
-      display: block;
-      text-decoration: none;
-      text-align: center;
-  }
-  .menu__item{
-      text-transform: uppercase;
-      margin-top: 30px;
-  }
-  .menu a {
-   font-size: 14px;
-  }
-  
-
-
-  /* slider */
-  .bg{
-    background: none;
-    height: 150px;
-  }
-
-.slider{
-  height: 200px;
-  margin-top: -130px;
-}
-.slider__block{
-  height: 300px;
-}
-
-.slider__img{
-  height: 50px;
-  margin-top: 100px;
-}
-
-
-
-.slider__button{
-  margin-top: -60px;
-}
-
-.button-next{
-  grid-column: 3; /* Розміщення правої кнопки в третій колонці */
-  justify-self: start; /* Вирівняти кнопку по лівому краю колонки */
-  text-align: right;
-  right: 0; /* Позиціонуємо другий об'єкт справа від картинки */
-  padding-right: 40px;
  
-}
+<div class="content"></div>
+    <div class="footer">
 
-.button-prew{
-  grid-column: 1; /* Розміщення лівої кнопки в першій колонці */
-  justify-self: end; /* Вирівняти кнопку по правому краю колонки */
-  text-align: left;
-  left: 0; /* Позиціонуємо перший об'єкт зліва від картинки */
-  padding-left: 40px;
+        
+        <p class="footer1">© 2012-2013 ЗАО "Компанія"<br>info@name.ua</p>
 
-}
 
+            <ul class="footer2">
+                <li><a class="footer_menu" href="#">Головна</a></li>
+                <li><a class="footer_menu" href="#">Каталог</a></li>
+                <li><a class="footer_menu" href="#">Доставка і оплата</a></li>
+                <li><a class="footer_menu" href="#">Прайс-лист</a></li>
+                <li><a class="footer_menu" href="#">Контакти</a></li>
+            </ul>
 
-.button-next,
-.button-prew {
-  position: absolute;
-  top: 50%; /* Позиціонуємо об'єкти по вертикалі на 50% відносно контейнера */
-  transform: translateY(-50%); /* Вирівнюємо їх назад на 50% їх власної висоти для центрування */
-  padding-top: 55px;
+            <div class="footer3">
+                 <p><a href="#">Розробка сайту</a><br>-компанія "Піксель плюс"</p>
+            </div>
+    </div>
+</div>
 
-}
 
 
 
 
 
-/*content*/
-content {
-  width: 100%;
-}
+<!--Modal window-->
 
-.list{
-  list-style: none; /* Видаляємо маркери списку */
-  padding: 0; /* Видаляємо внутрішні відступи списку */
-  display: flex; /* Встановлюємо гнучкий контейнер для горизонтального розташування */
-  margin-top: -40px;
-  font-size: 14px;
-}
-.list li{
-  margin-right: 10px;
-}
+ <div id="popup"  id="feedback-form" clas="popup">
+    <div class="popup_body">
+        <div class="popup_content">
 
+            <a href="" class="popup_close">
+                <img src="x.jpg" class="x" alt="Закрити popup">
+            </a>
 
+            <div class="popup_title">ЗВОРОТНІЙ ЗВ'ЯЗОК</div>
 
+            <div class="popup_text name">Ваше ім'я</div>
+            <form class="form">
+                <input class="form_1" type="text">
+            </form>
 
-/* Звільніть плавання для контейнера, щоб вирівнювати його відповідно до вмісту */
-.container_product::after {
-  content: "";
-  display: table;
-  clear: both;
-}
 
+            <div class="popup_text">Телефон</div>
+            <form class="form">
+                <input class="form_2" type="text">
+            </form>
 
-.column_leftblock{
-  width: 20%; 
-  float: left;
-  margin-right: 2%; /* Залиште трохи простору між колонками */
-  margin-left: -40px;
-}
 
-.menu_left {
-  list-style-type: none;
-  padding-left: 40px;
-}
-.menu_left a {
-  text-decoration: none; /* Видаляємо підкреслення гіперпосилань */
-  color: #000; /* Задаємо колір тексту гіперпосилань */
-}
+            <div class="popup_text">Email</div>
+            <form class="form">
+                <input class="form_3" type="text">
+            </form>
+            
 
-.litle_list {
-  display: none;
-}
-
-
-.menu_left li:hover .litle_list {
-  display: block;
-}
-
-
-
-
-.big_list{
-  font-size: 14px;
-  list-style: none;
-  color: #4e4e4e; /* Колір тексту */
-  font-family: 'PT Sans', sans-serif;
-  line-height: 20px;
-  margin: 10px 0;
-}
-
-.litle_list{
-  font-size: 12px;
-  color: #4e4e4e; /* Колір тексту */
-  font-family: 'PT Sans', sans-serif;
-  line-height: 22px;
-}
-
-.icon{
-  height: 50px;
-  padding-top: 80px;
-  padding-left: 60px;
-}
-
-.price_list{
-  font-size: 16px;
-  font-weight: bold;
-  color: #202020; /* Колір тексту */
-  font-family: 'PT Sans', sans-serif;
-  margin-top: 10px;
-  padding-left: 50px;
-
-}
-
-
-
-
-.column_centerblock{
-  width: 75%; 
-  float: right;
-  margin-right: 0;
-  margin-top: 10px; 
-  margin-left: 10px;
-}
-
-.product_container {
-  display: grid; /* Встановлюємо властивість display на grid для контейнера */
-  justify-content: space-between; /* Розташовуємо елементи з рівномірним відступом між ними */
-  align-items: center; /* Вирівнюємо елементи вертикально по центру */
-  grid-template-columns: repeat(1, 1fr); /* Розміщуємо товари в 3 колонки з однаковою шириною */
-  margin-top: -30px;
-  margin-right: -10px;
-}
-
-
-.product{
-  padding-top: 20px;
-  margin-left: 50px ;
-}
+            <div class="popup_text">Повідомлення</div>
+            <form class="form">
+                <input class="form_4" type="text">
+            </form>
 
+            
+            
+            <button class="button_popup">
+                <b class="button_popup_text">НАДІСЛАТИ</b>
+              </button>
+            
 
-.rectangle {
-  width: 150px;
-  height: 240px;
-  background-color: rgb(163, 163, 163);
-  border: none;
-  position: relative; /* Задаємо "relative" позицію, щоб зміст був позиціонований відносно цього блоку */
-}
+        </div>
+    </div>
+ </div>
 
-.foto_product{
-  width: 130px;
-  padding-top: 10px;
-  padding-left: 10px;
-}
 
-.text_product{
-  font-size: 12px;
-  text-align: left;
-  padding-left: 10px;
-  padding-right: 20px;
-  color: #202020;
-  font-family: 'PT Sans', sans-serif;
-}
-.text_product a{
-  text-decoration: none; /* Забирає підкреслення з усіх посилань */
-  color: #2c2c2c;
-}
 
 
-.price{
-  font-size: 14px;
-  font-weight: bold;
-  padding-left: 10px;
-  margin-top: -20px;
-  color: #202020;
-  font-family: 'PT Sans', sans-serif;
-}
 
 
-.page{
-  display: flex;
-  justify-content: center; /* Центруємо елементи по горизонталі */
-  align-items: center; /* Центруємо елементи по вертикалі */
-}
 
-.number{
-  list-style: none; /* Видаляємо маркери списку */
-  display: flex; /* Встановлюємо гнучкий контейнер для горизонтального розташування */
-  margin-top: 30px;
-  color: #202020;
-  font-family: 'PT Sans', sans-serif;
-}
 
-.num{
-  padding-right: 30px;
-  font-size: 12px;
-}
-.active{
-  font-size: 18px;
-  font-weight: bold;
-  margin-top: -4px;
-}
 
 
 
-/*горизонтальна лінія*/
-.block {
-  border-bottom: 1px solid #8d8d8d; /* Тут ви можете змінити товщину та колір риски */
-  padding-top: 40px;
-  padding-bottom: 10px; /* Опціонально: додайте відступ знизу, щоб риска була вище тексту */
-  width: 270px; 
-}
-
-
-
-
-.bottom_text {
-  display: flex; /* Встановлюємо контейнеру властивість "flex" для використання flexbox */
-}
-
-.bottom_column {
-  flex: 50%; /* Розділіть доступний простір між колонками порівну */
-  padding: 10px; /* Опціонально: додайте відступ для кращого розділення вмісту */
-}
-
-.p1 {
-  flex: 3; /* 30% ширини */
-}
-
-.p2 {
-  flex: 7; /* 70% ширини */
-}
-
-
-
-
-
-
-
-
-
-
-*footer*/
-
-* {
-  margin: 0;
-}
-
-.content {
- min-height: calc(100vh - -120px);
-}
-.footer {
-  height: 200px;
-  margin-left: -40px;
-  margin-right: -40px;
-  background: rgb(99, 99, 99);
-  display: flex;
-  justify-content: space-between; /* Розташування елементів між собою */
-}
-
-
-.footer1,
-.footer-menu,
-.footer2 {
-  flex: 1; /* Кожен елемент отримує однаковий простір */
-}
-
-
-
-
-
-.footer1{
-  padding-left: 50px;
-  padding-top: 30px;
-  text-align:left;
-  color: #fff; /* Колір тексту футера */
-  font-size: 10px;
-  font-family: 'PT Sans', sans-serif;
-}
-
-/* Стилі для списку без крапок */
-ul {
-  list-style-type: none;
-}
-
-.footer2 {
-  display: inline-block;
-  margin-right: 90px;
-  padding-top: 30px;
-  font-family: 'PT Sans', sans-serif;
-}
-
-.footer_menu{
-  color: #fff; /* Колір тексту футера */
-  font-size: 11px;
-  line-height: 15px;
-  text-align: center;
-}
-
-.footer3 {
-  margin-left: -20px;
-  padding-right: 30px;
-  padding-top: 30px;
-  text-align: left;
-  color: #fff; /* Колір тексту футера */
-  font-size: 10px;
-  font-family: 'PT Sans', sans-serif;
-}
-
-.footer3 a{
-  padding-right: 30px;
-  padding-top: 30px;
-  text-align: left;
-  color: #fff; /* Колір тексту футера */
-  font-size: 10px;
-  font-family: 'PT Sans', sans-serif;
-}
-
-
-
-
-
-
-
-
-
-}
+</body>
+</html>
