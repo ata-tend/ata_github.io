@@ -93,3 +93,14 @@ document.querySelectorAll('.big_list').forEach(function (bigListItem) {
 
 
 
+
+
+
+document.getElementById("open_popup_btn").addEventListener("click", function(){
+    document.getElementById("my_popup").classList.add("open")
+})
+
+document.getElementById("close_popup_btn").addEventListener("click", function(){
+    document.getElementById("my_popup").classList.remove("open")
+})
+
