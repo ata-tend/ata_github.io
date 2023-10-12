@@ -19,7 +19,7 @@
                     <h1 class="abc">Назва <br> компанії</h1>
                     <p class="slogan">найкрутіша компанія</p>
                     <p class="phone">+7(499)777-77-77<br>+7(499)777-77-77</p> 
-                    <a href="#popup" id="feedback-link" class="feedback-link">Зворотній зв'язок</a>
+                    <button id="open_popup_btn" class="feedback-link">Зворотній зв'язок</a></button>
                     
             </div>
         </div>
@@ -29,7 +29,6 @@
     
 
 <!-- Основне навігаційне меню -->
-
 <section class="container fbx">
 
     <div class="menu_container hamburger-menu">
@@ -49,12 +48,7 @@
         </label>
 
 
-
-
-
-
 <!--slider-->
-
 <section class="slider">
 
 <img src="fon.jpg" class="bg" alt="bg">
@@ -81,19 +75,17 @@
 <button class="slider__button button-next" type="button" aria-label="Next">
     &gt;
 
-
 </section>
 <script src="script.js">
 
 </script>
 
 
-
 <!--content-->
 <content class="content">
     <ul class="list">
-        <li>Головна</li>
-        <li>Каталог</li>
+        <li class="underline">Головна</li>
+        <li class="underline">Каталог</li>
         <li>Побутова техніка</li>   
     </ul>
 
@@ -103,9 +95,9 @@
     <div class="column_leftblock"> 
         <ul class="menu_left">
             <li class="big_list"><a href="#">Автомобілі</a></li>
-            <li class="big_list"><a href="#">Побутова техніка</a>
+            <li class="big_list underline"><a href="#">Побутова техніка</a>
                     <ul>
-                        <li class="litle_list"><a href="#">Мікрохвильовки</a></li>
+                        <li class="litle_list underline"><a href="#">Мікрохвильовки</a></li>
                         <li class="litle_list"><a href="#">Холодильники</a></li>
                         <li class="litle_list"><a href="#">Посудомийні машини</a></li>
                         <li class="litle_list"><a href="#">Чайники</a></li>
@@ -238,12 +230,7 @@
 
 
 
-
-
 <!--footer-->
-
-
- 
 <div class="content"></div>
     <div class="footer">
 
@@ -272,13 +259,13 @@
 
 <!--Modal window-->
 
- <div id="popup"  id="feedback-form" clas="popup">
+ <!--<div class="popup" id="my_popup">
     <div class="popup_body">
         <div class="popup_content">
 
-            <a href="" class="popup_close">
+            <button class="close_my_popup" id="close_popup_btn">
                 <img src="x.jpg" class="x" alt="Закрити popup">
-            </a>
+            </button>
 
             <div class="popup_title">ЗВОРОТНІЙ ЗВ'ЯЗОК</div>
 
@@ -316,9 +303,9 @@
     </div>
  </div>
 
+<script defer src="script.js"></script>
 
-
-
+-->
 
 
 
