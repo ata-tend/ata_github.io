@@ -9,31 +9,44 @@
 </head>
 <body>
 
-    <header class="object">  header content 
-        <div class="container">
-            
-            <div class="retreat">
-                <a href="#">
-                    <img class="img1" src="1.jpeg" alt="логотип">
-                </a>
-                    <h1 class="abc">Назва <br> компанії</h1>
-                    <p class="slogan">найкрутіша компанія</p>
-                    <p class="phone">+7(499)777-77-77<br>+7(499)777-77-77</p> 
-                    <button id="open_popup_btn" class="feedback-link">Зворотній зв'язок</a></button>
-                    
-            </div>
+<!--header content -->
+<header class="header">
+    <div class="container">
+
+        <div>
+            <a href="#"><img class="logo" src="pictures/1.jpeg" alt="логотип"></a>
         </div>
-    </header>
+
+        <div>
+            <h1 class="abc">Назва <br> компанії</h1>
+        </div>
 
 
+            <div class="slogan">найкрутіша компанія</div>
+       
+
+        <div>
+            <p class="phone">+7(499)777-77-77<br>+7(499)777-77-77</p>
+        </div>
+
+    
+            <button id="open_popup_btn" class="feedback-link"><a>Зворотній зв'язок</a></button>
+    
+
+    </div> 
     
 
 <!-- Основне навігаційне меню -->
-<section class="container fbx">
+<section class="fbx">
+
+    <button class="header_burger_menu" for="menu__toggle">
+        <span></span>
+        <span></span>
+        <span></span>
+   </button>
 
     <div class="menu_container hamburger-menu">
-        <input id="menu__toggle" type="checkbox" />
-            
+           
                 <ul class="menu menu__box">
                     <li><a class="menu__item" href="#">Головна</a></li>
                     <li><a class="menu__item" href="#">Каталог</a></li>
@@ -41,39 +54,41 @@
                     <li><a class="menu__item" href="#">Прайс-лист</a></li>
                     <li><a class="menu__item" href="#">Контакти</a></li>
                 </ul>
-                
+
     </div>
-        <label class="menu__btn" for="menu__toggle">
-             <span></span>
-        </label>
+</section>
+       
+          
+
+
+
+
+
 
 
 <!--slider-->
 <section class="slider">
 
-<img src="fon.jpg" class="bg" alt="bg">
-
     <div class="slider__block">
 
         <div class="slider__line">
             <div class="slide fade">
-                <img src="02.jpeg" class="slider__img" alt="1">
+                <img src="pictures/slide1.png" class="slider__img" alt="1">
             </div>
             <div class="slide fade">
-                <img src="03.jpg" class="slider__img" alt="2">
+                <img src="pictures/slide2.png" class="slider__img" alt="2">
             </div>
-            <div class="slide fade">
-                <img src="04.png" class="slider__img" alt="3">
-            </div>
+            
         </div>
     </div>
 
 <button class="slider__button button-prew" type="button" aria-label="Pervious">
-    &lt;
+    <img class="img_slider" src="pictures/button_left.png">
 </button>
 
 <button class="slider__button button-next" type="button" aria-label="Next">
-    &gt;
+    <img class="img_slider" src="pictures/button_right.png">
+</button>
 
 </section>
 <script src="script.js">
@@ -81,152 +96,158 @@
 </script>
 
 
+
+
+
 <!--content-->
 <content class="content">
-    <ul class="list">
-        <li class="underline">Головна</li>
-        <li class="underline">Каталог</li>
-        <li>Побутова техніка</li>   
-    </ul>
 
+    <div class="content_content">
 
-   <!--Перша колонка--> 
-
-    <div class="column_leftblock"> 
-        <ul class="menu_left">
-            <li class="big_list"><a href="#">Автомобілі</a></li>
-            <li class="big_list underline"><a href="#">Побутова техніка</a>
-                    <ul>
-                        <li class="litle_list underline"><a href="#">Мікрохвильовки</a></li>
-                        <li class="litle_list"><a href="#">Холодильники</a></li>
-                        <li class="litle_list"><a href="#">Посудомийні машини</a></li>
-                        <li class="litle_list"><a href="#">Чайники</a></li>
-                    </ul>
-            </li>
-            <li class="big_list"><a href="#">Мобільна техніка</a></li>
-            <li class="big_list"><a href="#">Комп'ютери</a></li>
-            <li class="big_list"><a href="#">Одяг</a></li>
-            <li class="big_list"><a href="#">Нерухомість</a></li>
-        </ul>
-
-        <img src="icon.jpg" class="icon" alt="Прайс-лист">
-        <p class="price_list">Прайс-лист</p>
-
-
-    </div>
-
-
-
-
-    <div class="column_centerblock"> <!--Друга колонка-->
-
-        <div class="product_container"> 
-
-            <div class="product">
-                     <div class="rectangle">
-                        <img src="foto.jpg" class="foto_product" alt="Зображення">
-                        <p class="text_product"><a href="#">Найкрутіший чайник, який треба купити!</a></p>
-                        <p class="price">1900 грн</p>
-                        <img src="basket.jpeg" class="b" alt="Зображення">
-                    </div>
-                 
-            </div>
-        
-
-            <div class="product">
-                <div class="ccontainer_product"> <!-- ???? -->
-                    <div class="rectangle">
-                        <img src="foto.jpg" class="foto_product" alt="Зображення">
-                        <p class="text_product"><a href="#">Найкрутіший чайник, який треба купити!</a></p>
-                        <p class="price">1900 грн</p>
-                        <img src="basket.jpeg" class="b" alt="Зображення">
-                    
-                    </div>
-                </div>   
-            </div>
-
-
-            <div class="product">
-                <div class="container_product"> <!-- ???? -->
-                    <div class="rectangle">
-                        <img src="foto.jpg" class="foto_product" alt="Зображення">
-                        <p class="text_product"><a href="#">Найкрутіший чайник, який треба купити!</a></p>
-                        <p class="price">1900 грн</p>
-                        <img src="basket.jpeg" class="b" alt="Зображення">
-                    </div>
-                </div>   
-            </div>
-
-            <div class="product">
-                <div class="container_product"> <!-- ???? -->
-                    <div class="rectangle">
-                        <img src="foto.jpg" class="foto_product" alt="Зображення">
-                        <p class="text_product"><a href="#">Найкрутіший чайник, який треба купити!</a></p>
-                        <p class="price">1900 грн</p>
-                        <img src="basket.jpeg" class="b" alt="Зображення">
-                    </div>
-                </div>   
-            </div>
-
-
-            <div class="product">
-                <div class="container_product"> <!-- ???? -->
-                    <div class="rectangle">
-                        <img src="foto.jpg" class="foto_product" alt="Зображення">
-                        <p class="text_product"><a href="#">Найкрутіший чайник, який треба купити!</a></p>
-                        <p class="price">1900 грн</p>
-                        <img src="basket.jpeg" class="b" alt="Зображення">
-                    </div>
-                </div>   
-            </div>
-
-        </div> 
-
-
-        
-        <div class="page">
-           <ul class="number">
-                <li class="num">1</li>
-                <li class="num">2</li>
-                <li class="num active">3</li>
-                <li class="num">4</li>
-                <li class="num">5</li>
-                <li class="num">6</li>
-                <li class="num">7</li>
-            </ul> 
+        <div class="content_menu">
+            <ul class="list">
+                <li class="content_list underline">Головна</li>
+                <li class="content_list underline">Каталог</li>
+                <li class="content_list">Побутова техніка</li>   
+            </ul>
         </div>
 
+    <!--Перша колонка--> 
+        <div class="column_leftblock"> 
+            <ul class="menu_left">
+                <li class="big_list"><a href="#">Автомобілі</a></li>
+                <li class="big_list"><a href="#">Побутова техніка</a>
+                        <ul>
+                            <li class="litle_list underline"><a href="#">Мікрохвильовки</a></li>
+                            <li class="litle_list"><a href="#">Холодильники</a></li>
+                            <li class="litle_list"><a href="#">Посудомийні машини</a></li>
+                            <li class="litle_list"><a href="#">Чайники</a></li>
+                        </ul>
+                </li>
+                <li class="big_list"><a href="#">Мобільна техніка</a></li>
+                <li class="big_list"><a href="#">Комп'ютери</a></li>
+                <li class="big_list"><a href="#">Одяг</a></li>
+                <li class="big_list"><a href="#">Нерухомість</a></li>
+            </ul>
 
-        <div class="block"></div> <!--горизонтальна лінія-->
-          
-        
-            <div class="bottom_text">
-                <div class="bottom_column"> <!-- Ваш вміст для першої колонки -->
-                    <p class="p1">
-                        Компанія "Піксель Плюс" існує більше 6 років, за цей час ми брали участь
-                        у розробці більше ніж 700 сайтів, тому можемо впевнено називати себе професіоналами. 
-                        На даний момент наш колектив складається із більш ніж 30 співробітників, що працюють
-                        в двох офісах у Києві і Львові. Характерними для цього жанру мотиви: нерозділеної
-                        любові, прощання з молодістю, згасання душі.
-                    </p>
+            <img src="pictures/excel.png" class="icon" alt="Прайс-лист">
+            <p class="price_list">Прайс-лист</p>
+        </div>
+
+   
+
+
+
+<!--Друга колонка-->
+
+        <div class="column_centerblock"> 
+
+            <div class="product_container">
+                <div class="product">
+                        <div class="rectangle">
+                            <img src="pictures/nophoto.png" class="foto_product" alt="Зображення">
+                            <p class="text_product"><a href="#">Найкрутіший чайник, який треба купити!</a></p>
+                            <p class="price">1900 грн</p>
+                        <a><img src="pictures/addtobasket.png" class="b" alt="Зображення"></a> 
+                        </div>   
+                </div>
+            
+
+                <div class="product">
+                    <div class="container_product"> 
+                        <div class="rectangle">
+                            <img src="pictures/nophoto.png" class="foto_product" alt="Зображення">
+                            <p class="text_product"><a href="#">Найкрутіший чайник, який треба купити!</a></p>
+                            <p class="price">1900 грн</p>
+                        <a><img src="pictures/addtobasket.png" class="b" alt="Зображення"></a> 
+                        </div> 
+                    </div>   
                 </div>
 
 
-                <div class="bottom_column"><!-- Ваш вміст для другої колонки -->
-                    <p class="p2">
-                        Одним з основних напрямків робіт нашої компанії є пошукове
-                         просування сайтів, на даний момент ми працюємо з більш ніж 
-                         150 постійними клієнтами по більш ніж 11 000 пошуковим запитам. 
-                         При цьому в роботі основний акцент ми робимо на якості робіт, і так 
-                         само приділяємо особисті унікальні розробки в області SEO просування.
-                          На даний момент відділ SEO складається з 9 чоловік під керівництвом 
-                          ведучого спеціаліста, переважно працюючи у нашому київському офісі.   
-                    </p>
+                <div class="product">
+                    <div class="container_product"> 
+                        <div class="rectangle">
+                            <img src="pictures/nophoto.png" class="foto_product" alt="Зображення">
+                            <p class="text_product"><a href="#">Найкрутіший чайник, який треба купити!</a></p>
+                            <p class="price">1900 грн</p>
+                        <a><img src="pictures/addtobasket.png" class="b" alt="Зображення"></a> 
+                        </div>
+                    </div>   
                 </div>
+
+                <div class="product">
+                    <div class="container_product"> 
+                        <div class="rectangle reg">
+                            <img src="pictures/nophoto.png" class="foto_product" alt="Зображення">
+                            <p class="text_product"><a href="#">Найкрутіший чайник, який треба купити!</a></p>
+                            <p class="price">1900 грн</p>
+                        <a><img src="pictures/addtobasket.png" class="b" alt="Зображення"></a> 
+                        </div>
+                    </div>   
+                </div>
+
+
+                <div class="product">
+                    <div class="container_product"> 
+                        <div class="rectangle reg">
+                            <img src="pictures/nophoto.png" class="foto_product" alt="Зображення">
+                            <p class="text_product"><a href="#">Найкрутіший чайник, який треба купити!</a></p>
+                            <p class="price">1900 грн</p>
+                            <a><img src="pictures/addtobasket.png" class="b" alt="Зображення"></a> 
+                        </div>
+                    </div>   
+                </div>
+
+            </div> 
+
+
+            
+            <div class="page">
+            <ul class="number">
+                    <li class="num">1</li>
+                    <li class="num">2</li>
+                    <li class="num active">3</li>
+                    <li class="num">4</li>
+                    <li class="num">5</li>
+                    <li class="num">6</li>
+                    <li class="num">7</li>
+                </ul> 
             </div>
-              
+
+
+            <div class="block"></div> <!--горизонтальна лінія-->
+            
+            
+                <div class="bottom_text">
+                    <div class="bottom_column"> <!-- Ваш вміст для першої колонки -->
+                        <p class="p1">
+                            Компанія "Піксель Плюс" існує більше 6 років, за цей час ми брали участь
+                            у розробці більше ніж 700 сайтів, тому можемо впевнено називати себе професіоналами. 
+                            На даний момент наш колектив складається із більш ніж 30 співробітників, що працюють
+                            в двох офісах у Києві і Львові. Характерними для цього жанру мотиви: нерозділеної
+                            любові, прощання з молодістю, згасання душі.
+                        </p>
+                    </div>
+                <div class="bottom_column"><!-- Ваш вміст для другої колонки -->
+                        <p class="p2">
+                            Одним з основних напрямків робіт нашої компанії є пошукове
+                            просування сайтів, на даний момент ми працюємо з більш ніж 
+                            150 постійними клієнтами по більш ніж 11 000 пошуковим запитам. 
+                            При цьому в роботі основний акцент ми робимо на якості робіт, і так 
+                            само приділяємо особисті унікальні розробки в області SEO просування.
+                            На даний момент відділ SEO складається з 9 чоловік під керівництвом 
+                            ведучого спеціаліста, переважно працюючи у нашому київському офісі.   
+                        </p>
+                    </div>
+                </div>
+        </div>         
+
+
+
     </div>  
 </content>
+
 
 
 
@@ -234,38 +255,42 @@
 <div class="content"></div>
     <div class="footer">
 
-        
-        <p class="footer1">© 2012-2013 ЗАО "Компанія"<br>info@name.ua</p>
+        <div class="footer_text"> 
+            <p class="footer1">© 2012-2013 ЗАО "Компанія"<br>info@name.ua</p>
 
 
-            <ul class="footer2">
-                <li><a class="footer_menu" href="#">Головна</a></li>
-                <li><a class="footer_menu" href="#">Каталог</a></li>
-                <li><a class="footer_menu" href="#">Доставка і оплата</a></li>
-                <li><a class="footer_menu" href="#">Прайс-лист</a></li>
-                <li><a class="footer_menu" href="#">Контакти</a></li>
-            </ul>
+                <ul class="footer2">
+                    <li><a class="footer_menu" href="#">Головна</a></li>
+                    <li><a class="footer_menu" href="#">Каталог</a></li>
+                    <li><a class="footer_menu" href="#">Доставка і оплата</a></li>
+                    <li><a class="footer_menu" href="#">Прайс-лист</a></li>
+                    <li><a class="footer_menu" href="#">Контакти</a></li>
+                </ul>
 
-            <div class="footer3">
-                 <p><a href="#">Розробка сайту</a><br>-компанія "Піксель плюс"</p>
-            </div>
+                <img class="footer_logo" src="pictures/company.png" alt="картинка">
+                <div class="footer3">
+                    <p><a href="#">Розробка сайту - </a><br>компанія "Піксель плюс"</p>
+                </div>
+        </div>      
     </div>
 </div>
 
 
 
 
-
-
 <!--Modal window-->
 
- <!--<div class="popup" id="my_popup">
+<div id="my_popup" class="popup">
     <div class="popup_body">
         <div class="popup_content">
 
-            <button class="close_my_popup" id="close_popup_btn">
-                <img src="x.jpg" class="x" alt="Закрити popup">
-            </button>
+
+            
+            
+
+            <button id="close_popup_btn" class="close_my_popup"> 
+                 <img src="pictures/x.jpeg" class="x" alt="Закрити popup">
+        </button>
 
             <div class="popup_title">ЗВОРОТНІЙ ЗВ'ЯЗОК</div>
 
@@ -301,17 +326,18 @@
 
         </div>
     </div>
- </div>
+</div>
+            <script>
+                document.getElementById("open_popup_btn").addEventListener("click", function(){
+                document.getElementById("my_popup").classList.add("open");
+            });
 
-<script defer src="script.js"></script>
+            document.getElementById("close_popup_btn").addEventListener("click", function(){
+                document.getElementById("my_popup").classList.remove("open");
+            });
+            </script>
 
--->
+            
 
-
-
-
-
-
-
-</body>
-</html>
+</body>    
+</header>
