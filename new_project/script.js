@@ -9,7 +9,7 @@ let width;
 
 function init() {
     width = document.querySelector('.slider__block').offsetWidth;
-    SliderLine.style.width = width * images.length + 'px'; // Fixed this line
+    SliderLine.style.width = width * images.length + 'px';
     images.forEach(item => {
         item.style.width = width + 'px';
         item.style.height = 'auto';
@@ -17,11 +17,16 @@ function init() {
     rollSlider();
 }
 
+document.querySelector('.menu__btn').addEventListener('click', function() {
+    const menuToggle = document.querySelector('#menu__toggle');
+    menuToggle.checked = !menuToggle.checked;
+});
+
 init();
 window.addEventListener('resize', init);
 
 function rollSlider() {
-    SliderLine.style.transform = 'translate(-' + count * width + 'px)';
+    SliderLine.style.transform = 'translateX(-' + count * width + 'px)';
 }
 
 function sliderNext() {
@@ -44,63 +49,37 @@ function sliderPrev() {
 
 if (prevButton !== null) prevButton.addEventListener('click', sliderPrev);
 
-
 let slideIndex = 0;
 showSlides();
 
 function showSlides() {
-  let slides = document.querySelectorAll(".slide");
-  for (let i = 0; i < slides.length; i++) {
-    slides[i].style.display = "none";
-  }
-  slideIndex++;
-  if (slideIndex > slides.length) {
-    slideIndex = 1;
-  }
-  slides[slideIndex - 1].style.display = "block";
-  setTimeout(showSlides, 4000); // Зміна слайдів кожні 4 секунди
+    let slides = document.querySelectorAll(".slide");
+    for (let i = 0; i < slides.length; i++) {
+        slides[i].style.display = "none";
+    }
+    slideIndex++;
+    if (slideIndex > slides.length) {
+        slideIndex = 1;
+    }
+    slides[slideIndex - 1].style.display = "block";
+    setTimeout(showSlides, 4000);
 }
 
-
-// script.js
 const header = document.querySelector('header');
 const nav = document.querySelector('nav');
 const footer = document.querySelector('footer');
 
-// Отримуємо висоту блока, який видаляємо (наприклад, header)
 const headerHeight = header.offsetHeight;
 
-// Функція для видалення блока (наприклад, header)
 function removeHeader() {
     header.style.transform = `translateY(-${headerHeight}px)`;
 }
-
-
-
-
-  
 
 document.querySelectorAll('.big_list').forEach(function (bigListItem) {
     bigListItem.addEventListener('mouseenter', function () {
         document.querySelectorAll('.big_list').forEach(function (item) {
             item.style.transform = 'translateY(0)';
         });
-        bigListItem.style.transform = 'translateY(-' + (bigListItem.offsetHeight - 10) + 'px)';
+        bigListItem.style.transform = `translateY(-${bigListItem.offsetHeight - 10}px)`;
     });
 });
-
-
-
-
-
-
-
-
-document.getElementById("open_popup_btn").addEventListener("click", function(){
-    document.getElementById("my_popup").classList.add("open")
-})
-
-document.getElementById("close_popup_btn").addEventListener("click", function(){
-    document.getElementById("my_popup").classList.remove("open")
-})
-
