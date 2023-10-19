@@ -250,7 +250,7 @@ body, html {
   grid-column: 3; /* Placement of the right button in the third column */
   justify-self: start; /* Align the button to the left edge of the column */
   text-align: right;
-  padding-right: 460px;
+  padding: 20%;
  
 }
 
@@ -258,7 +258,7 @@ body, html {
   grid-column: 1; /* Placement of the left button in the first column */
   justify-self: end; /* Align the button to the right edge of the column */
   text-align: left;
-  padding-left: 460px;
+  padding: 20%;
 }
 
 
@@ -992,6 +992,7 @@ body {
 .slider__button img{
   height: 50px;
   vertical-align: middle; 
+}
 
 .button_slider{
   max-width: 300px;
@@ -1165,7 +1166,7 @@ body {
   background-color: rgb(163, 163, 163);
   border: none;
   position: relative; 
-
+}
 .rec_right{
    margin-left: 10px;
 }
