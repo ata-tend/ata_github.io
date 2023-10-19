@@ -4,7 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styles.css">
-    
+    <script defer src="js/script.js"></script>  
+
     <title>3-ий макет</title>
 </head>
 <body>
@@ -37,13 +38,13 @@
     
 
 <!-- Основне навігаційне меню -->
-<section class="fbx">
+<button class="header_burger_btn"  id="burger">
+    <span></span>
+    <span></span>
+    <span></span>
+</button>
 
-    <button class="header_burger_menu" for="menu__toggle">
-        <span></span>
-        <span></span>
-        <span></span>
-   </button>
+<section class="fbx">
 
     <div class="menu_container hamburger-menu">
            
@@ -57,8 +58,9 @@
 
     </div>
 </section>
-       
+   
           
+
 
 
 
@@ -67,31 +69,32 @@
 
 <!--slider-->
 <section class="slider">
-    <div class="slider_foto">
-        <div class="slide1"> 
-            <img src="pictures/slide1.png" class="slider_foto1" alt="1">
+
+    <div class="slider__block">
+
+        <div class="slider__line">
+            <div class="slide fade">
+                <img src="pictures/slide1.png" class="slider__img" alt="1">
+            </div>
+            <div class="slide fade">
+                <img src="pictures/slide2.png" class="slider__img" alt="2">
+            </div>
+           
         </div>
-        <div class="slide2"> 
-            <img src="pictures/slide2.png" class="slider_foto2" alt="2">
-        </div>
-    </div>   
+    </div>
+<div class="button_slider">
     
-<button class="slider__button button-prew" type="button" aria-label="Pervious">
-    <img src="pictures/button_left.png">
-    </button>
-    
-    <button class="slider__button button-next" type="button" aria-label="Next">
-    <img src="pictures/button_right.png">
+    <button class="slider__button button-prew" type="button" aria-label="Pervious">
+        <img src="pictures/button_left.png" alt="Pervious">
     </button>
 
+    <button class="slider__button button-next" type="button" aria-label="Next">
+        <img src="pictures/button_right.png" alt="Next">
+    </button>
+</div>
 </section>
 
 <script src="script.js"></script>
-
-<script>
-    
-  </script>
-
 
 
 
