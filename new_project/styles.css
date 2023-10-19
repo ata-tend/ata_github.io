@@ -82,6 +82,51 @@ body, html {
   width: 100%;
 }
 
+.header_burger_btn{ 
+  display: none;
+  position: relative;
+  width: 40px;
+  height: 40px;
+  border: none;
+  background: transparent;
+  z-index: 99999999;
+}
+
+.header_burger_btn span{
+position: absolute;
+width: 30px;
+height: 3px;
+background-color: #000;
+left: 5px;
+transition: transform .5s, opacity .5s, background-color .5s;
+}
+
+.header_burger_btn span:nth-child(1){
+  transform: translateY(-10px);
+}
+.header_burger_btn span:nth-child(3){
+  transform: translateY(10px);
+}
+
+.header.open.header_burger_btn span{
+  background-color: white;
+}
+
+
+.header.open.header_burger_btn span:nth-child(1){
+  transform: translateY(0)rotate(45deg);
+}
+
+.header.open.header_burger_btn span:nth-child(2){
+  opacity: 0;
+}
+
+.header.open.header_burger_btn span:nth-child(3){
+  transform: translateY(0) rotate(-45deg);
+}
+
+
+
 .menu_container{
   text-align: center;
   width: 100%;
@@ -143,20 +188,41 @@ body, html {
 
 
 
+
 /*slider*/
-.slider{
+.slider {
   width: 100%;
   text-align: center;
-  margin-top: 0px;
+  margin-top: 0;
+  position: flex;
+}
+
+.slider__block {
+  margin: auto;
+  overflow: hidden;
+  padding-top: 0;
+  width: 70%; /* The width of the slider container */
+  height: 600px;
+  display: grid;
+  grid-template-columns: 1fr auto 1fr; /* Split into 3 columns with the same width */
+  text-align: center; /* Center inside the container */
+  margin-top: 0; /* Remove indentation from above */
   position: relative;
 }
 
+.slider__line {
+  display: flex;
+  position: relative;
+  left: 0;
+  transition: transform ease 1s; /* Fixed animation function */
+}
+
 .slide {
+  height: 100px;
   display: none;
 }
 
 .fade {
-  
   animation-name: fade;
   animation-duration: 1.5s;
 }
@@ -170,68 +236,40 @@ body, html {
   }
 }
 
-.slider__block{
-  margin: auto;
-  overflow: hidden;
-  width: 50%; /* Ширина контейнера слайдера */
-  display: grid;
-  grid-template-columns: 1fr auto 1fr; /* Розподіл на 3 колонки з однаковою шириною */
-  align-items: center; /* Вертикально центрувати елементи */
-  text-align: center; /* Центруємо всередині контейнера */
-}
-
-
-.slider__line{
-  display: flex;
-  position: relative;
-  left: 0;
-  transition: transform else 1s;
-}
-
-.slider__img{
-  height: 50px;
-  max-width: 980px;
-  max-width: 100%; /* Забезпечуємо, щоб картинка була максимальної ширини, не виходячи за межі контейнера */
-  vertical-align: middle; /* Вирівнюємо картинку по вертикалі */
-  
-}
-
 .slider__button{
   width: 100%;
   background: none;
   border: none;
-  
   font-size: 26px;
-  font-weight: 700;
+  font-weight: 700px;
   margin: 0 auto;
   cursor: pointer;
   display: block;
-  
 }
 
 .button-next{
-  grid-column: 3; /* Розміщення правої кнопки в третій колонці */
-  justify-self: start; /* Вирівняти кнопку по лівому краю колонки */
+  grid-column: 3; /* Placement of the right button in the third column */
+  justify-self: start; /* Align the button to the left edge of the column */
   text-align: right;
-  right: 0; /* Позиціонуємо другий об'єкт справа від картинки */
-  padding-right: 110px;
+  padding-right: 460px;
+ 
 }
 
 .button-prew{
-  grid-column: 1; /* Розміщення лівої кнопки в першій колонці */
-  justify-self: end; /* Вирівняти кнопку по правому краю колонки */
+  grid-column: 1; /* Placement of the left button in the first column */
+  justify-self: end; /* 
+  Align the button to the right edge of the column */
   text-align: left;
-  left: 0; /* Позиціонуємо перший об'єкт зліва від картинки */
-  padding-left: 110px;
+  padding-left: 460px;
 }
 
 
 .button-next,
 .button-prew {
   position: absolute;
-  top: 50%; /* Позиціонуємо об'єкти по вертикалі на 50% відносно контейнера */
-  transform: translateY(-50%); /* Вирівнюємо їх назад на 50% їх власної висоти для центрування */
-  padding-top: 30px;
+  top: 50%; /*We position the objects vertically by 50% relative to the container */
+  transform: translateY(-50%); /* Align them back to 50% of their own height for centering */
+  padding-top:-700px;
 }
 
 
@@ -247,7 +285,7 @@ body, html {
   margin: 0 auto;
   padding: 0 10px; /* Add margins if necessary */
   display: flex;
-  margin-top: 10px;
+  margin-top: -100px;
 }
 
 .content_menu{
@@ -854,6 +892,43 @@ body {
 
 
 /*menu*/
+.header_burger_btn{
+  display: block;
+}
+
+.menu_container{
+  position: absolute;
+  margin-top: 0;
+  margin-left: -400px;
+  background-color: aquamarine;
+  height: 300px;
+  width: 400px;
+  text-align: center;
+  transition: transform .5s;
+}
+
+.menu_container li{
+  display: block;
+}
+
+.menu__item{
+  color: #fff;
+  font-size: 21px;
+  display: block;
+  margin-left: -50px;
+  margin-top: 20px;
+  z-index: 999;
+}
+
+.fbx.open.menu_container {
+  transform: translateX(100%);
+
+}
+
+
+
+
+/*
 #menu__toggle {
   opacity: 0;
 }
@@ -949,6 +1024,18 @@ body {
   background-color: #CFD8DC;
 }
 
+*/
+
+
+
+
+
+
+
+
+
+
+
 
 }
 
@@ -1017,74 +1104,15 @@ body {
 
 
 
-  @media (max-width: 600px){
-.container {
-        max-width: 520px;
-        overflow-x: hidden;
-      }
-      
-        .logo{
-            height: 60px;
-        }
-        
-        .abc{
-            font-size: 25px;
-            line-height: 20px;
-            margin-top: -1px;
-        }
-      
-        .slogan{
-            font-size: 14px;
-            margin-top: 40px;
-            margin-left: -102px;
-        }
-        
-        .phone {
-            font-size: 20px;
-            line-height: 24px;
-            margin-top: -1px;
-            margin-left: 140px;
-            text-transform: uppercase; /* Звертання тексту великими літерами */  
-        }
-    
-        .feedback-link{
-            font-size: 16px;
-            line-height: 28px;
-            margin-top: 45px;
-            margin-left: 365px;
-        }
-      }
-    
 
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-      @media (max-width: 320px){
+      @media (max-width: 480px){
 
           .container {
             text-align: center;
+            max-width: 300px;
           }
           
             .logo{
@@ -1138,13 +1166,19 @@ body {
   transition: transform else 1s;
 }
 
-.slider__img{
-  max-width: 100%;
+.slider__button img{
+  height: 30px;
   vertical-align: middle; /* Вирівнюємо картинку по вертикалі */
+}
+
+.button_slider{
+  max-width: 300px;
+  text-align: center;
 }
 
 .slider__button{
   width: 100%;
+  margin-top: -60px;
 }
 
 .button-next{
@@ -1164,10 +1198,6 @@ body {
   transform: translateY(-50%); /* Вирівнюємо їх назад на 50% їх власної висоти для центрування */
   padding-top: 20px;
 }
-          
-.img_slider{
-  height: 35px;
-}
 
 
 
@@ -1178,6 +1208,10 @@ body {
 /*content*/
 .content {
   width: 100%;
+}
+
+.content_content{
+  margin-top: -450px;
 }
 
 .content_menu{
@@ -1479,12 +1513,12 @@ ul {
 
 .footer_logo{
   margin-top: 30px;
-  margin-left: 30px;
+  margin-left: 60px;
   height: 20px;
 }
 .footer3 {
   margin-top: 30px;
-  margin-left: -40px;
+  margin-left: 10px;
   text-align: left;
   color: #fff; /* Колір тексту футера */
   font-size: 10px;
@@ -1499,6 +1533,124 @@ ul {
 }
 
 
+
+
+/*modal window*/
+body {
+  overflow-x: hidden; /* Вимкнути горизонтальну прокрутку */
+}
+
+.popup {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  top: 0;
+  left: 0;
+  z-index: 999989999999999;
+  overflow: auto;
+  visibility: hidden;
+  opacity: 0;
+  transition: opacity .4s, visibily.4s;
+  overflow-x: hidden;
+  overflow-y: hidden;
+}
+
+.popup_content {
+  background: #fff; /* Фон модального вікна */
+  color: #000;
+  max-width: 200px;
+  height: 350px;
+  padding: 20px;
+  position: relative;
+
+}
+
+.close_my_popup {
+  position: absolute;
+  top: -20px;
+  right: -25px;
+  border: none;
+  background-color: transparent;
+}
+
+.popup_close {
+  position: absolute;
+  right: -20px;
+  top: -20px;
+}
+
+.x{
+  height: 20px;
+
+}
+
+.popup_title{
+  text-align: center;
+  padding-top: 5px;
+  font-size: 16px;
+  margin: 0px 0px 1em 0px;
+  font-family: 'PT Sans', sans-serif;
+}
+
+.popup_text.name{
+  padding-top: 10px;
+}
+.popup_text{
+  text-align: center;
+  padding-top: 5px;
+  font-size: 10px;
+  font-family: 'PT Sans', sans-serif;
+}
+
+.form{
+  padding-left: 10px;
+  padding-right: 10px;
+  padding-top: 10px;
+}
+
+.form_1 {
+  height: 15px;
+  width: 180px;
+}
+
+.form_2{
+  height: 15px;
+  width: 180px;
+}
+.form_3{
+  height: 15px;
+  width: 180px;
+}
+
+.form_4{
+  height: 70px;
+  width: 180px;
+  position: relative;
+}
+
+
+.button_popup{
+  width: 100px;
+  height: 25px;
+  margin-top: 30px;
+  margin-left: 50px;
+  background-color: #757575;
+  border: none;
+}
+
+.button_popup_text{
+  padding-top: 40px;
+  padding-left: 0px;
+  color: #ffffff;
+  font-family: 'PT Sans', sans-serif;
+}
+
+#feedback-form {
+  display: none;
+  opacity: 0;
+  transition: opacity 0.5s;
+}
 
 
 
