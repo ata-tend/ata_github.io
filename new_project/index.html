@@ -1,344 +1,112 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="styles.css">
-    <script defer src="js/script.js"></script>  
+const SliderLine = document.querySelector('.slider__line');
+const images = document.querySelectorAll('.slider__img');
+
+const nextButton = document.querySelector('.button-next');
+const prevButton = document.querySelector('.button-prev');
+
+let count = 0;
+let width;
 
-    <title>3-ий макет</title>
-</head>
-<body>
+function init() {
+    width = document.querySelector('.slider__block').offsetWidth;
+    SliderLine.style.width = width * images.length + 'px'; // Fixed this line
+    images.forEach(item => {
+        item.style.width = width + 'px';
+        item.style.height = 'auto';
+    });
+    rollSlider();
+}
+init();
+window.addEventListener('resize', init);
 
-<!--header content -->
-<header class="header">
-    <div class="container">
+function rollSlider() {
+    SliderLine.style.transform = 'translate(-' + count * width + 'px)';
+}
 
-        <div>
-            <a href="#"><img class="logo" src="pictures/1.jpeg" alt="логотип"></a>
-        </div>
+function sliderNext() {
+    count++;
+    if (count >= images.length) {
+        count = 0;
+    }
+    rollSlider();
+}
 
-        <div>
-            <h1 class="abc">Назва <br> компанії</h1>
-        </div>
+if (nextButton !== null) nextButton.addEventListener('click', sliderNext);
 
+function sliderPrev() {
+    count--;
+    if (count < 0) {
+        count = images.length - 1;
+    }
+    rollSlider();
+}
 
-            <div class="slogan">найкрутіша компанія</div>
-       
+if (prevButton !== null) prevButton.addEventListener('click', sliderPrev);
 
-        <div>
-            <p class="phone">+7(499)777-77-77<br>+7(499)777-77-77</p>
-        </div>
-
-    
-            <button id="open_popup_btn" class="feedback-link"><a>Зворотній зв'язок</a></button>
-    
-
-    </div> 
-    
-
-<!-- Основне навігаційне меню -->
-<button class="header_burger_btn"  id="burger">
-    <span></span>
-    <span></span>
-    <span></span>
-</button>
+// Додайте обробку подій для кнопок "Назад" і "Вперед"
+if (nextButton !== null) {
+    nextButton.addEventListener('click', sliderNext);
+}
 
-<section class="fbx">
+if (prevButton !== null) {
+    prevButton.addEventListener('click', sliderPrev);
+}
 
-    <div class="menu_container hamburger-menu">
-           
-                <ul class="menu menu__box">
-                    <li><a class="menu__item" href="#">Головна</a></li>
-                    <li><a class="menu__item" href="#">Каталог</a></li>
-                    <li><a class="menu__item" href="#">Доставка і оплата</a></li>
-                    <li><a class="menu__item" href="#">Прайс-лист</a></li>
-                    <li><a class="menu__item" href="#">Контакти</a></li>
-                </ul>
+let slideIndex = 0;
+showSlides();
 
-    </div>
-</section>
-   
-          
-
-
-
-
-
-
+function showSlides() {
+    let slides = document.querySelectorAll(".slide");
+    for (let i = 0; i < slides.length; i++) {
+        slides[i].style.display = "none";
+    }
+    slideIndex++;
+    if (slideIndex > slides.length) {
+        slideIndex = 1;
+    }
+    slides[slideIndex - 1].style.display = "block";
+    setTimeout(showSlides, 4000); // Зміна слайдів кожні 4 секунди
+}
 
-<!--slider-->
-<section class="slider">
-
-    <div class="slider__block">
-
-        <div class="slider__line">
-            <div class="slide fade">
-                <img src="pictures/slide1.png" class="slider__img" alt="1">
-            </div>
-            <div class="slide fade">
-                <img src="pictures/slide2.png" class="slider__img" alt="2">
-            </div>
-           
-        </div>
-    </div>
-<div class="button_slider">
-    
-    <button class="slider__button button-prew" type="button" aria-label="Pervious">
-        <img src="pictures/button_left.png" alt="Pervious">
-    </button>
-
-    <button class="slider__button button-next" type="button" aria-label="Next">
-        <img src="pictures/button_right.png" alt="Next">
-    </button>
-</div>
-</section>
-
-<script src="script.js"></script>
-
-
-
-
 
-<!--content-->
-<content class="content">
-
-    <div class="content_content">
-
-        <div class="content_menu">
-            <ul class="list">
-                <li class="content_list underline">Головна</li>
-                <li class="content_list underline">Каталог</li>
-                <li class="content_list">Побутова техніка</li>   
-            </ul>
-        </div>
-
-    <!--Перша колонка--> 
-        <div class="column_leftblock"> 
-            <ul class="menu_left">
-                <li class="big_list"><a href="#">Автомобілі</a></li>
-                <li class="big_list"><a href="#">Побутова техніка</a>
-                        <ul>
-                            <li class="litle_list underline"><a href="#">Мікрохвильовки</a></li>
-                            <li class="litle_list"><a href="#">Холодильники</a></li>
-                            <li class="litle_list"><a href="#">Посудомийні машини</a></li>
-                            <li class="litle_list"><a href="#">Чайники</a></li>
-                        </ul>
-                </li>
-                <li class="big_list"><a href="#">Мобільна техніка</a></li>
-                <li class="big_list"><a href="#">Комп'ютери</a></li>
-                <li class="big_list"><a href="#">Одяг</a></li>
-                <li class="big_list"><a href="#">Нерухомість</a></li>
-            </ul>
-
-            <img src="pictures/excel.png" class="icon" alt="Прайс-лист">
-            <p class="price_list">Прайс-лист</p>
-        </div>
-
-   
-
-
-
-<!--Друга колонка-->
-
-        <div class="column_centerblock"> 
-
-            <div class="product_container">
-                <div class="product">
-                        <div class="rectangle">
-                            <img src="pictures/nophoto.png" class="foto_product" alt="Зображення">
-                            <p class="text_product"><a href="#">Найкрутіший чайник, який треба купити!</a></p>
-                            <p class="price">1900 грн</p>
-                        <a><img src="pictures/addtobasket.png" class="b" alt="Зображення"></a> 
-                        </div>   
-                </div>
-            
-
-                <div class="product">
-                    <div class="container_product"> 
-                        <div class="rectangle">
-                            <img src="pictures/nophoto.png" class="foto_product" alt="Зображення">
-                            <p class="text_product"><a href="#">Найкрутіший чайник, який треба купити!</a></p>
-                            <p class="price">1900 грн</p>
-                        <a><img src="pictures/addtobasket.png" class="b" alt="Зображення"></a> 
-                        </div> 
-                    </div>   
-                </div>
-
-
-                <div class="product">
-                    <div class="container_product"> 
-                        <div class="rectangle">
-                            <img src="pictures/nophoto.png" class="foto_product" alt="Зображення">
-                            <p class="text_product"><a href="#">Найкрутіший чайник, який треба купити!</a></p>
-                            <p class="price">1900 грн</p>
-                        <a><img src="pictures/addtobasket.png" class="b" alt="Зображення"></a> 
-                        </div>
-                    </div>   
-                </div>
-
-                <div class="product">
-                    <div class="container_product"> 
-                        <div class="rectangle reg">
-                            <img src="pictures/nophoto.png" class="foto_product" alt="Зображення">
-                            <p class="text_product"><a href="#">Найкрутіший чайник, який треба купити!</a></p>
-                            <p class="price">1900 грн</p>
-                        <a><img src="pictures/addtobasket.png" class="b" alt="Зображення"></a> 
-                        </div>
-                    </div>   
-                </div>
-
-
-                <div class="product">
-                    <div class="container_product"> 
-                        <div class="rectangle reg">
-                            <img src="pictures/nophoto.png" class="foto_product" alt="Зображення">
-                            <p class="text_product"><a href="#">Найкрутіший чайник, який треба купити!</a></p>
-                            <p class="price">1900 грн</p>
-                            <a><img src="pictures/addtobasket.png" class="b" alt="Зображення"></a> 
-                        </div>
-                    </div>   
-                </div>
-
-            </div> 
-
-
-            
-            <div class="page">
-            <ul class="number">
-                    <li class="num">1</li>
-                    <li class="num">2</li>
-                    <li class="num active">3</li>
-                    <li class="num">4</li>
-                    <li class="num">5</li>
-                    <li class="num">6</li>
-                    <li class="num">7</li>
-                </ul> 
-            </div>
-
-
-            <div class="block"></div> <!--горизонтальна лінія-->
-            
-            
-                <div class="bottom_text">
-                    <div class="bottom_column"> <!-- Ваш вміст для першої колонки -->
-                        <p class="p1">
-                            Компанія "Піксель Плюс" існує більше 6 років, за цей час ми брали участь
-                            у розробці більше ніж 700 сайтів, тому можемо впевнено називати себе професіоналами. 
-                            На даний момент наш колектив складається із більш ніж 30 співробітників, що працюють
-                            в двох офісах у Києві і Львові. Характерними для цього жанру мотиви: нерозділеної
-                            любові, прощання з молодістю, згасання душі.
-                        </p>
-                    </div>
-                <div class="bottom_column"><!-- Ваш вміст для другої колонки -->
-                        <p class="p2">
-                            Одним з основних напрямків робіт нашої компанії є пошукове
-                            просування сайтів, на даний момент ми працюємо з більш ніж 
-                            150 постійними клієнтами по більш ніж 11 000 пошуковим запитам. 
-                            При цьому в роботі основний акцент ми робимо на якості робіт, і так 
-                            само приділяємо особисті унікальні розробки в області SEO просування.
-                            На даний момент відділ SEO складається з 9 чоловік під керівництвом 
-                            ведучого спеціаліста, переважно працюючи у нашому київському офісі.   
-                        </p>
-                    </div>
-                </div>
-        </div>         
-
-
-
-    </div>  
-</content>
-
-
-
-
-<!--footer-->
-<div class="content"></div>
-    <div class="footer">
-
-        <div class="footer_text"> 
-            <p class="footer1">© 2012-2013 ЗАО "Компанія"<br>info@name.ua</p>
-
-
-                <ul class="footer2">
-                    <li><a class="footer_menu" href="#">Головна</a></li>
-                    <li><a class="footer_menu" href="#">Каталог</a></li>
-                    <li><a class="footer_menu" href="#">Доставка і оплата</a></li>
-                    <li><a class="footer_menu" href="#">Прайс-лист</a></li>
-                    <li><a class="footer_menu" href="#">Контакти</a></li>
-                </ul>
-
-                <img class="footer_logo" src="pictures/company.png" alt="картинка">
-                <div class="footer3">
-                    <p><a href="#">Розробка сайту - </a><br>компанія "Піксель плюс"</p>
-                </div>
-        </div>      
-    </div>
-</div>
-
-
-
-
-<!--Modal window-->
-
-<div id="my_popup" class="popup">
-    <div class="popup_body">
-        <div class="popup_content">
-
-
-            
-            
-
-            <button id="close_popup_btn" class="close_my_popup"> 
-                 <img src="pictures/x.jpeg" class="x" alt="Закрити popup">
-        </button>
-
-            <div class="popup_title">ЗВОРОТНІЙ ЗВ'ЯЗОК</div>
-
-            <div class="popup_text name">Ваше ім'я</div>
-            <form class="form">
-                <input class="form_1" type="text">
-            </form>
-
-
-            <div class="popup_text">Телефон</div>
-            <form class="form">
-                <input class="form_2" type="text">
-            </form>
-
-
-            <div class="popup_text">Email</div>
-            <form class="form">
-                <input class="form_3" type="text">
-            </form>
-            
-
-            <div class="popup_text">Повідомлення</div>
-            <form class="form">
-                <input class="form_4" type="text">
-            </form>
-
-            
-            
-            <button class="button_popup">
-                <b class="button_popup_text">НАДІСЛАТИ</b>
-              </button>
-            
-
-        </div>
-    </div>
-</div>
-            <script>
-                document.getElementById("open_popup_btn").addEventListener("click", function(){
-                document.getElementById("my_popup").classList.add("open");
-            });
-
-            document.getElementById("close_popup_btn").addEventListener("click", function(){
-                document.getElementById("my_popup").classList.remove("open");
-            });
-            </script>
-
-            
-
-</body>    
-</header>
+
+// script.js
+const header = document.querySelector('header');
+const nav = document.querySelector('nav');
+const footer = document.querySelector('footer');
+
+// Отримуємо висоту блока, який видаляємо (наприклад, header)
+const headerHeight = header.offsetHeight;
+
+// Функція для видалення блока (наприклад, header)
+function removeHeader() {
+    header.style.transform = `translateY(-${headerHeight}px)`;
+}
+
+
+
+
+  
+
+document.querySelectorAll('.big_list').forEach(function (bigListItem) {
+    bigListItem.addEventListener('mouseenter', function () {
+        document.querySelectorAll('.big_list').forEach(function (item) {
+            item.style.transform = 'translateY(0)';
+        });
+        bigListItem.style.transform = 'translateY(-' + (bigListItem.offsetHeight - 10) + 'px)';
+    });
+});
+
+
+
+//document.addEventListener("DOMContentLoaded", function(){
+//    document.getElementById("burger").addEventListener("click", function(){
+//      document.querySelector("header").classList.toggle("open")
+  //  })
+//})
+
+
+
+
+
+
