@@ -109,5 +109,13 @@ burgerButton.addEventListener('click', function () {
 
 
 
-
-
+document.addEventListener("DOMContentLoaded", function() {
+    document.getElementById("open_popup_btn").addEventListener("click", function(){
+      document.querySelector(".popup").classList.add("open");
+    });
+  
+    document.getElementById("close_popup_btn").addEventListener("click", function(){
+      document.querySelector(".popup").classList.remove("open");
+    });
+  });
+  
