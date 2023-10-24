@@ -140,7 +140,6 @@ body, html {
 
 
 /*burger*/
-
 .burger{
   display: none;
   position: relative;
@@ -240,37 +239,34 @@ body, html {
   background: none;
   border: none;
   font-size: 26px;
-  font-weight: 700px;
+  font-weight: 600px;
   margin: 0 auto;
   cursor: pointer;
   display: block;
 }
 
+
 .button-next{
   grid-column: 3; /* Placement of the right button in the third column */
   justify-self: start; /* Align the button to the left edge of the column */
   text-align: right;
-  padding: 20%;
- 
+  margin-left: -400px;
 }
 
 .button-prew{
   grid-column: 1; /* Placement of the left button in the first column */
   justify-self: end; /* Align the button to the right edge of the column */
   text-align: left;
-  padding: 20%;
+  margin-left: 400px;
 }
 
 
 .button-next,
 .button-prew {
   position: absolute;
-  top: 50%; /*We position the objects vertically by 50% relative to the container */
   transform: translateY(-50%); /* Align them back to 50% of their own height for centering */
-  padding-top:-700px;
+  margin-top: -350px;
 }
-
-
 
 
 
@@ -292,7 +288,6 @@ body, html {
 .content_menu{
   text-align: left;
 }
-
 
 .list{
   list-style: none; /* We delete the markers of the list */
@@ -316,8 +311,6 @@ body, html {
   top: 50%; /* Vertical positioning of the separator */
   transform: translateY(-50%); /* We center the separator vertically */
 }
-
-
 
 /* Free float the container to align it to its contents */
 .container_product::after {
@@ -350,11 +343,9 @@ body, html {
   color: #000; /* We set the color of the hyperlink text */
 }
 
-
 .menu_left li:hover .litle_list {
   display: block;
 }
-
 
 .big_list{
   text-align: left;
@@ -390,9 +381,6 @@ body, html {
 
 }
 
-
-
-
 .column_centerblock{
   width: 80%; 
   float: right;
@@ -407,12 +395,10 @@ body, html {
   margin-top: 50px;
 }
 
-
 .product{
   padding-top: -10px;
   padding-right: 10px;
 }
-
 
 .rectangle {
   width: 240px;
@@ -423,9 +409,8 @@ body, html {
 }
 
 .reg{
-margin-top: 20px;
+  margin-top: 20px;
 }
-
 
 .foto_product{
   width: 200px;
@@ -464,9 +449,6 @@ margin-top: 20px;
   margin-top: -45px;
 }
 
-
-
-
 .page{
   display: flex;
   justify-content: center;
@@ -492,8 +474,6 @@ margin-top: 20px;
 }
 
 
-
-
 /*horizontal line*/
 .block {
   border-bottom: 1px solid #8d8d8d; 
@@ -501,7 +481,6 @@ margin-top: 20px;
   padding-bottom: 10px; 
   width: 780px; 
 }
-
 
 .bottom_text {
   display: flex; 
@@ -519,9 +498,6 @@ margin-top: 20px;
 .p2 {
   flex: 7; /* 70% of the width */
 }
-
-
-
 
 
 
@@ -551,13 +527,9 @@ margin-top: 20px;
  
 }
 
-.footer1,
-.footer-menu,
-.footer2 {
+.footer1, .footer-menu, .footer2 {
   flex: 1; 
 }
-
-
 
 .footer1{
   margin-left: -200px;
@@ -583,7 +555,7 @@ ul {
 .footer_menu{
   color: #fff; 
   font-size: 16px;
- line-height: 22px;
+  line-height: 22px;
 }
 
 .footer_logo{
@@ -591,6 +563,7 @@ ul {
   margin-left: 200px;
   height: 50px;
 }
+
 .footer3 {
   margin-top: 30px;
   margin-left: 10px;
@@ -599,6 +572,7 @@ ul {
   font-size: 16px;
   font-family: 'PT Sans', sans-serif;
 }
+
 .footer3 a{
   margin-top: 30px;
   text-align: left;
@@ -632,7 +606,7 @@ body {
   overflow: auto;
   visibility: hidden;
   opacity: 0;
-  transition: opacity .4s, visibily.4s;
+  transition: opacity .4s, visibility .4s;
   overflow-x: hidden;
   overflow-y: hidden;
 }
@@ -652,8 +626,6 @@ body {
   transition: transform .8s;
 }
 
-
-
 .popup.open{
   visibility: visible;
   opacity: 1;
@@ -661,8 +633,6 @@ body {
 #my_popup.open {
   display: block;
 }
-
-
 
 .popup.open .popup_body{
   transform: scale(1);
@@ -715,22 +685,11 @@ body {
 }
 
 .form{
-  padding-left: 10px;
-  padding-right: 10px;
-  padding-top: 10px;
+  padding: 6px;
 }
 
-.form_1 {
-  height: 30px;
-  width: 370px;
-}
-
-.form_2{
-  height: 30px;
-  width: 370px;
-}
-.form_3{
-  height: 30px;
+.form_1{
+  height: 25px;
   width: 370px;
 }
 
@@ -739,7 +698,6 @@ body {
   width: 370px;
   position: relative;
 }
-
 
 .button_popup{
   width: 130px;
@@ -783,84 +741,12 @@ body {
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 @media (max-width: 800px){
 
-.container {
-  max-width: 720px;
-  overflow-x: hidden;
-}
+  .container {
+    max-width: 720px;
+    overflow-x: hidden;
+  }
 
   .logo{
       height: 80px;
@@ -1209,7 +1095,6 @@ margin-top: 20px;
   float: right; 
   vertical-align: middle;
   margin-right: 20px; 
-  margin-top: -10px;
 }
 
 
@@ -1817,8 +1702,6 @@ margin-top: 20px;
   flex: 1; 
 }
 
-
-
 .footer1{
   margin-left: 20px;
   margin-top: 30px;
@@ -1827,7 +1710,6 @@ margin-top: 20px;
   font-size: 10px;
   font-family: 'PT Sans', sans-serif;
 }
-
 
 ul {
   list-style-type: none;
@@ -1851,6 +1733,7 @@ ul {
   margin-left: 60px;
   height: 20px;
 }
+
 .footer3 {
   margin-top: 30px;
   margin-left: 10px;
@@ -1859,6 +1742,7 @@ ul {
   font-size: 10px;
   font-family: 'PT Sans', sans-serif;
 }
+
 .footer3 a{
   margin-top: 30px;
   text-align: left;
@@ -1931,6 +1815,7 @@ body {
 .popup_text.name{
   padding-top: 10px;
 }
+
 .popup_text{
   text-align: center;
   padding-top: 5px;
@@ -1944,19 +1829,11 @@ body {
   padding-top: 10px;
 }
 
-.form_1 {
+.form_1, .form_2, .form_3{
   height: 15px;
   width: 180px;
 }
 
-.form_2{
-  height: 15px;
-  width: 180px;
-}
-.form_3{
-  height: 15px;
-  width: 180px;
-}
 
 .form_4{
   height: 70px;
