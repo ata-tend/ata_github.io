@@ -1,56 +1,67 @@
 const SliderLine = document.querySelector('.slider__line');
 const images = document.querySelectorAll('.slider__img');
-
 const nextButton = document.querySelector('.button-next');
-const prevButton = document.querySelector('.button-prev');
+const prevButton = document.querySelector('.button-prew');
 
-let count = 0;
+let currentIndex = 0;
 let width;
 
 function init() {
-    width = document.querySelector('.slider__block').offsetWidth;
-    SliderLine.style.width = width * images.length + 'px'; // Fixed this line
-    images.forEach(item => {
-        item.style.width = width + 'px';
-        item.style.height = 'auto';
-    });
-    rollSlider();
+  width = document.querySelector('.slider__block').offsetWidth;
+  SliderLine.style.width = width * images.length + 'px';
+  images.forEach(item => {
+    item.style.width = width + 'px';
+    item.style.height = 'auto';
+  });
+  rollSlider();
 }
+
 init();
 window.addEventListener('resize', init);
 
 function rollSlider() {
-    SliderLine.style.transform = 'translate(-' + count * width + 'px)';
+  SliderLine.style.transform = 'translate(-' + currentIndex * width + 'px)';
 }
 
 function sliderNext() {
-    count++;
-    if (count >= images.length) {
-        count = 0;
-    }
-    rollSlider();
+  currentIndex++;
+  if (currentIndex >= images.length) {
+    currentIndex = 0;
+  }
+  rollSlider();
+  updateImages(); // Оновлюємо src зображень при переході на наступний слайд
 }
-
-if (nextButton !== null) nextButton.addEventListener('click', sliderNext);
 
 function sliderPrev() {
-    count--;
-    if (count < 0) {
-        count = images.length - 1;
+  currentIndex--;
+  if (currentIndex < 0) {
+    currentIndex = images.length - 1;
+  }
+  rollSlider();
+  updateImages(); // Оновлюємо src зображень при переході на попередній слайд
+}
+
+function updateImages() {
+  images.forEach((image, index) => {
+    if (index === 1 || index === 2) {
+      image.src = 'pictures/slide2.png'; // Встановлюємо src для другого та третього зображення
     }
-    rollSlider();
+  });
 }
 
-if (prevButton !== null) prevButton.addEventListener('click', sliderPrev);
-
-// Додайте обробку подій для кнопок "Назад" і "Вперед"
-if (nextButton !== null) {
-    nextButton.addEventListener('click', sliderNext);
+if (nextButton) {
+  nextButton.addEventListener('click', sliderNext);
 }
 
-if (prevButton !== null) {
-    prevButton.addEventListener('click', sliderPrev);
+if (prevButton) {
+  prevButton.addEventListener('click', sliderPrev);
 }
+
+// Початково показуємо друге зображення
+images[1].style.display = 'block';
+
+
+
 
 let slideIndex = 0;
 showSlides();
@@ -65,28 +76,18 @@ function showSlides() {
         slideIndex = 1;
     }
     slides[slideIndex - 1].style.display = "block";
-    setTimeout(showSlides, 4000); // Зміна слайдів кожні 4 секунди
+    setTimeout(showSlides, 4000); // Change slides every 4 seconds
 }
 
-
-
-// script.js
 const header = document.querySelector('header');
 const nav = document.querySelector('nav');
 const footer = document.querySelector('footer');
 
-// Отримуємо висоту блока, який видаляємо (наприклад, header)
 const headerHeight = header.offsetHeight;
 
-// Функція для видалення блока (наприклад, header)
 function removeHeader() {
     header.style.transform = `translateY(-${headerHeight}px)`;
 }
-
-
-
-
-  
 
 document.querySelectorAll('.big_list').forEach(function (bigListItem) {
     bigListItem.addEventListener('mouseenter', function () {
@@ -97,8 +98,6 @@ document.querySelectorAll('.big_list').forEach(function (bigListItem) {
     });
 });
 
-
-
 const burgerButton = document.querySelector('.burger');
 const navMenu = document.querySelector('.nav');
 
@@ -106,8 +105,6 @@ burgerButton.addEventListener('click', function () {
     this.classList.toggle('active');
     navMenu.classList.toggle('open');
 });
-
-
 
 document.addEventListener("DOMContentLoaded", function() {
     document.getElementById("open_popup_btn").addEventListener("click", function(){
@@ -118,4 +115,34 @@ document.addEventListener("DOMContentLoaded", function() {
       document.querySelector(".popup").classList.remove("open");
     });
   });
-  
+// Закриваємо підменю при кліку за межами підменю
+document.addEventListener("click", function (event) {
+    var submenu = document.querySelector(".submenu");
+    if (submenu.style.display === "block" && !event.target.closest(".big_list")) {
+        submenu.style.display = "none";
+    }
+});
+
+//validation
+  document.addEventListener("DOMContentLoaded", function () {
+    const nameInput = document.querySelector("input[name='name']");
+
+    nameInput.addEventListener("input", function () {
+        //Remove any non-letter characters
+        this.value = this.value.replace(/[^a-zA-Zа-яА-ЯїЇєЄіІґҐ']/g, '');
+    });
+});
+//validation phone
+document.addEventListener("DOMContentLoaded", function () {
+    const phoneInput = document.querySelector("input[name='phone']");
+
+    phoneInput.addEventListener("input", function () {
+        //Remove any characters that are not plus (+) or numbers
+        this.value = this.value.replace(/[^+\d]/g, '');
+        // We limit the input to 10 digits
+        if (this.value.length > 11) {
+            this.value = this.value.substring(0, 11);
+        }
+    });
+});
+
