@@ -29,7 +29,7 @@ function sliderNext() {
     currentIndex = 0;
   }
   rollSlider();
-  updateImages(); // Оновлюємо src зображень при переході на наступний слайд
+  updateImages(); 
 }
 
 function sliderPrev() {
@@ -38,13 +38,12 @@ function sliderPrev() {
     currentIndex = images.length - 1;
   }
   rollSlider();
-  updateImages(); // Оновлюємо src зображень при переході на попередній слайд
+  updateImages(); 
 }
 
 function updateImages() {
   images.forEach((image, index) => {
     if (index === 1 || index === 2) {
-      image.src = 'pictures/slide2.png'; // Встановлюємо src для другого та третього зображення
     }
   });
 }
@@ -57,7 +56,7 @@ if (prevButton) {
   prevButton.addEventListener('click', sliderPrev);
 }
 
-// Початково показуємо друге зображення
+
 images[1].style.display = 'block';
 
 
@@ -115,7 +114,7 @@ document.addEventListener("DOMContentLoaded", function() {
       document.querySelector(".popup").classList.remove("open");
     });
   });
-// Закриваємо підменю при кліку за межами підменю
+
 document.addEventListener("click", function (event) {
     var submenu = document.querySelector(".submenu");
     if (submenu.style.display === "block" && !event.target.closest(".big_list")) {
