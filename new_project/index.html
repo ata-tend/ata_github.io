@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ua">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -18,7 +18,9 @@
             </div>
             <div class="slogan">найкрутіша компанія</div>
             <div>
-                <p class="phone">+7(499)777-77-77<br>+7(499)777-77-77</p>
+                <a class="phone" href="tel:+74997777777">+7(499)777-77-77</a>
+                    <br>
+                <a class="phone" href="tel:+74997777777">+7(499)777-77-77</a>  
             </div>
             <button id="open_popup_btn" class="feedback-link"><a>Зворотній зв'язок</a></button>
         </div>
@@ -40,28 +42,29 @@
             </nav>
         </div>
     </section>
-    <!-- Slider -->
-    <section class="slider">
-        <div class="slider__block">
-            <div class="slider__line">
-                <div class="slide fade">
-                    <img src="pictures/slide1.png" class="slider__img" alt="1">
-                </div>
-                <div class="slide fade">
-                    <img src="pictures/slide2.png" class="slider__img" alt="2">
-                </div>
-            </div>
+  <!-- Slider -->
+  <section class="slider">
+    <div class="slider__block">
+      <div class="slider__line">
+        <div class="slide fade">
+          <img src="pictures/slide1.png" class="slider__img" alt="1">
         </div>
-        <div class="button_slider">
-            <button class="slider__button button-prew" type="button" aria-label="Pervious">
-                <img src="pictures/button_left.png" alt="Pervious">
-            </button>
-            <button class="slider__button button-next" type="button" aria-label="Next">
-                <img src="pictures/button_right.png" alt="Next">
-            </button>
+        <div class="slide fade">
+          <img src="pictures/slide2.png" class="slider__img" alt="2">
         </div>
-    </section>
-    <script src="script.js"></script>
+      </div>
+    </div>
+    <div class="button_slider">
+      <button class="slider__button button-prew" type="button" aria-label="Previous">
+        <img src="pictures/button_left.png" alt="Previous">
+      </button>
+      <button class="slider__button button-next" type="button" aria-label="Next">
+        <img src="pictures/button_right.png" alt="Next">
+      </button>
+    </div>
+  </section>
+  <script src="script.js"></script>
+  
     <!-- Content -->
     <content class="content">
         <div class="content_content">
@@ -75,19 +78,53 @@
             <!-- First column -->
             <div class="column_leftblock">
                 <ul class="menu_left">
-                    <li class="big_list"><a href="#">Автомобілі</a></li>
-                    <li class="big_list"><a href="#">Побутова техніка</a>
-                        <ul>
-                            <li class="litle_list underline"><a href="#">Мікрохвильовки</a></li>
-                            <li class="litle_list"><a href="#">Холодильники</a></li>
-                            <li class="litle_list"><a href="#">Посудомийні машини</a></li>
-                            <li class="litle_list"><a href="#">Чайники</a></li>
+                    <li class="big_list main-menu-item" id="appliances"><a href="#">Автомобілі</a>
+                        <ul class=" menu_left submenu">
+                            <li><a href="#">Підпункт 1.1</a></li>
+                            <li><a href="#">Підпункт 1.2</a></li>
+                            <li><a href="#">Підпункт 1.3</a></li>
+                            <li><a href="#">Підпункт 1.4</a></li>
+                        </ul></li>
+                    <li class="big_list main-menu-item" id="appliances"><a href="#">Побутова техніка</a>
+                        <ul class="menu_left submenu">
+                            <li><a href="#">Мікрохвильовки</a></li>
+                            <li><a href="#">Холодильники</a></li>
+                            <li><a href="#">Посудомийки</a></li>
+                            <li><a href="#">Чайники</a></li>
                         </ul>
                     </li>
-                    <li class="big_list"><a href="#">Мобільна техніка</a></li>
-                    <li class="big_list"><a href="#">Комп'ютери</a></li>
-                    <li class="big_list"><a href="#">Одяг</a></li>
-                    <li class="big_list"><a href="#">Нерухомість</a></li>
+                    <li class="big_list main-menu-item" id="appliances"><a href="#">Мобільна техніка</a>
+                        <ul class="submenu">
+                            <li><a href="#">Підпункт 3.1</a></li>
+                            <li><a href="#">Підпункт 3.2</a></li>
+                            <li><a href="#">Підпункт 3.3</a></li>
+                            <li><a href="#">Підпункт 3.4</a></li>
+                        </ul>
+                    </li>
+                    <li class="big_list main-menu-item" id="appliances"><a href="#">Комп'ютери</a>
+                        <ul class="submenu">
+                            <li><a href="#">Підпункт 4.1</a></li>
+                            <li><a href="#">Підпункт 4.2</a></li>
+                            <li><a href="#">Підпункт 4.3</a></li>
+                            <li><a href="#">Підпункт 4.4</a></li>
+                        </ul>
+                    </li>
+                    <li class="big_list main-menu-item" id="appliances"><a href="#">Одяг</a>
+                        <ul class="submenu">
+                            <li><a href="#">Підпункт 5.1</a></li>
+                            <li><a href="#">Підпункт 5.2</a></li>
+                            <li><a href="#">Підпункт 5.3</a></li>
+                            <li><a href="#">Підпункт 5.4</a></li>
+                        </ul>
+                    </li>
+                    <li class="big_list main-menu-item" id="appliances"><a href="#">Нерухомість</a>
+                        <ul class="submenu">
+                            <li><a href="#">Підпункт 6.1</a></li>
+                            <li><a href="#">Підпункт 6.2</a></li>
+                            <li><a href="#">Підпункт 6.3</a></li>
+                            <li><a href="#">Підпункт 6.4</a></li>
+                        </ul>
+                    </li>
                 </ul>
                 <img src="pictures/excel.png" class="icon" alt="Прайс-лист">
                 <p class="price_list">Прайс-лист</p>
@@ -181,25 +218,26 @@
             </div>
         </div>
     </content>
-    <!-- Footer -->
-    <div class="content">
-        <div class="footer">
-            <div class="footer_text">
-                <p class="footer1">© 2012-2013 ЗАО "Компанія"<br>info@name.ua</p>
-                <ul class="footer2">
-                    <li><a class="footer_menu" href="#">Головна</a></li>
-                    <li><a class="footer_menu" href="#">Каталог</a></li>
-                    <li><a class="footer_menu" href="#">Доставка і оплата</a></li>
-                    <li><a class="footer_menu" href="#">Прайс-лист</a></li>
-                    <li><a class="footer_menu" href="#">Контакти</a></li>
-                </ul>
-                <img class="footer_logo" src="pictures/company.png" alt="картинка">
-                <div class="footer3">
-                    <p><a href="#">Розробка сайту - </a><br>компанія "Піксель плюс"</p>
-                </div>
+  <!-- Footer -->
+<div class="content">
+    <div class="footer">
+        <div class="footer_text">
+            <p class="footer1">© 2012-2013 ЗАО "Компанія" <a class="email_footer" href="mailto:info@name.ua">info@name.ua</a></p>
+            <ul class="footer2">
+                <li><a class="footer_menu" href="#">Головна</a></li>
+                <li><a class="footer_menu" href="#">Каталог</a></li>
+                <li><a class="footer_menu" href="#">Доставка і оплата</a></li>
+                <li><a class="footer_menu" href="#">Прайс-лист</a></li>
+                <li><a class="footer_menu" href="#">Контакти</a></li>
+            </ul>
+            <img class="footer_logo" src="pictures/company.png" alt="картинка">
+            <div class="footer3">
+                <p><a href="#">Розробка сайту - </a><br>компанія "Піксель плюс"</p>
             </div>
         </div>
     </div>
+</div>
+
     <!-- Modal window -->
     <div id="my_popup" class="popup">
         <div class="popup_body">
@@ -208,28 +246,25 @@
                     <img src="pictures/x.jpeg" class="x" alt="Закрити popup">
                 </button>
                 <div class="popup_title">ЗВОРОТНІЙ ЗВ'ЯЗОК</div>
-                <div class="popup_text name">Ваше ім'я</div>
                 <form class="form">
-                    <input class="form_1" type="text">
+                    <div class="popup_text name">Ваше ім'я</div>
+                    <input class="form_1" type="text" name="name" required>
+                    <div class="popup_text">Телефон</div>
+                    <input class="form_1" type="text" name="phone" required>
+                    <div class="popup_text">Email</div>
+                    <input class="form_1" type="email" name="email" required>
+                    <div class="popup_text">Повідомлення</div>
+                    <textarea class="form_4" name="message" required placeholder="" maxlength="300"></textarea>
+
+
+                    <button class="button_popup" type="submit">
+                        <b class="button_popup_text">НАДІСЛАТИ</b>
+                    </button>
                 </form>
-                <div class="popup_text">Телефон</div>
-                <form class="form">
-                    <input class="form_1" type="text">
-                </form>
-                <div class="popup_text">Email</div>
-                <form class="form">
-                    <input class="form_1" type="text">
-                </form>
-                <div class="popup_text">Повідомлення</div>
-                <form class="form">
-                    <input class="form_4" type="text">
-                </form>
-                <button class="button_popup">
-                    <b class="button_popup_text">НАДІСЛАТИ</b>
-                </button>
             </div>
         </div>
     </div>
-    <script defer src="js/script.js"></script>
-</body>
-</html>
+    <script defer src="script.js"></script>
+    </body>
+    </html>
+    
